@@ -1,0 +1,32 @@
+{
+  "name": "maths",
+  "version": "1.0.0",
+  "description": "Interactive Maths Tutorial",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/charisTheo/maths.git"
+  },
+  "keywords": [
+    "maths",
+    "interactive",
+    "tutorial",
+    "animations"
+  ],
+  "author": "charisTheo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/charisTheo/maths/issues"
+  },
+  "homepage": "https://github.com/charisTheo/maths#readme",
+  "dependencies": {
+    "browser-sync": "^2.18.13",
+    "express": "^4.15.3",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0",
+    "node": "^8.2.1"
+  }
+}
