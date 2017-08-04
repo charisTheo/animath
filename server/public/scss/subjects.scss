@@ -1,0 +1,32 @@
+section#home {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    .subject {
+        flex-basis: 100px;
+        flex-flow: row wrap;
+        margin: 5px;
+        display: table;
+        min-width: 100px;
+        min-height: 100px;
+        opacity: 0.7;
+        text-decoration: none;
+        background-color: rgb(random(256)-1,random(256)-1,random(256)-1);
+        &:hover,
+        &:focus {
+            text-decoration: none;
+            opacity: 1;
+            .subject-title {
+                font-size: 20px;
+            }
+        }
+        .subject-title {
+            margin: 0;
+            vertical-align: middle;
+            display: table-cell;
+            padding: 20px;
+            font-size: 14px;
+        }
+    }
+}

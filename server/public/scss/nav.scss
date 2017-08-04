@@ -1,0 +1,17 @@
+nav {
+    @extend nav-font;
+    position: fixed;
+    z-index: 999;
+    ul {
+        list-style: none;
+        position: fixed;
+        li {
+            display: inline-block;
+            margin: 10px;
+            a {
+                text-decoration: none;
+                color: red;
+            }
+        }
+    }
+}

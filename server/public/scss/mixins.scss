@@ -1,0 +1,43 @@
+@mixin box-shadow($r1, $r2, $blur, $color) {
+  box-shadow: $r1 $r2 $blur $color;
+  -o-box-shadow: $r1 $r2 $blur $color;
+  -ms-box-shadow: $r1 $r2 $blur $color;
+  -moz-box-shadow: $r1 $r2 $blur $color;
+  -webkit-box-shadow: $r1 $r2 $blur $color;
+}
+
+@mixin transition-all() {
+  -webkit-transition: all 0.35s;
+  -moz-transition: all 0.35s;
+  -ms-transition: all 0.35s;
+  -o-transition: all 0.35s;
+  transition: all 0.35s;
+}
+
+@mixin transform($type) {
+	transform: $type;
+	-webkit-transform: $type;
+	-moz-transform: $type;
+	-ms-transform: $type;
+	-o-transform: $type;
+}
+@mixin translate($x, $y) {
+  -webkit-transform: translate($x, $y);
+  -moz-transform: translate($x, $y);
+  -ms-transform: translate($x, $y); // IE9+
+  -o-transform: translate($x, $y);
+  transform: translate($x, $y);
+}
+@mixin transition($transition) {
+  -webkit-transition: $transition;
+  -moz-transition: $transition;
+  -ms-transition: $transition;
+  -o-transition: $transition;
+  transition: $transition;
+}
+@mixin transition-transform($transition) {
+  -webkit-transition: -webkit-transform $transition;
+     -moz-transition: -moz-transform $transition;
+       -o-transition: -o-transform $transition;
+          transition: transform $transition;
+}

@@ -4,13 +4,13 @@ $(document).ready(function() {
 
     $('<div id="nav-blob"></div>').css({
         width: 0,
-        height: $("#navigation ").height(),
+        height: '2px',
         backgroundColor: "orange",
         position: "absolute",
         zIndex: -1
-    }).prependTo("#navigation");
+    }).prependTo("nav ul");
 
-    $('#navigation a').hover(function(){
+    $('nav a').hover(function(){
         //Mouseover
         $('#nav-blob').animate({
             width: $(this).width() + 10,
@@ -24,7 +24,7 @@ $(document).ready(function() {
     }, function(){
         //Mouseout
         $('#nav-blob').animate({
-            left: $('#navigation li:first a').position().left,
+            left: $('nav li:first a').position().left,
             opacity: 0
         }, "fast");
 
