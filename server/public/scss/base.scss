@@ -45,15 +45,28 @@ section {
     text-align: center;
 }
 #home {
-    background-color: lightcoral;
+    background-color: $blue;
 }
 #about {
-    background-color: lightblue;
+    background-color: $yellow;
 }
 #contact {
-    background-color: lightsalmon;
+    background-color: $red;
 }
-
+.SubjectPageHeadings {
+    position: absolute;
+    top: 0;
+    margin: 20px;
+    color: $blue;
+}
+.page-title {
+    @extend .SubjectPageHeadings;
+    right: 10px;
+}
+.homeArrowButton {
+    @extend .SubjectPageHeadings;
+    left: 0;
+}
 
 svg#filters {
     display: none;

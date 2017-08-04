@@ -43,13 +43,25 @@ section {
   text-align: center; }
 
 #home {
-  background-color: lightcoral; }
+  background-color: #04756F; }
 
 #about {
-  background-color: lightblue; }
+  background-color: #FF8C00; }
 
 #contact {
-  background-color: lightsalmon; }
+  background-color: #D90000; }
+
+.SubjectPageHeadings, .page-title, .homeArrowButton {
+  position: absolute;
+  top: 0;
+  margin: 20px;
+  color: #04756F; }
+
+.page-title {
+  right: 10px; }
+
+.homeArrowButton {
+  left: 0; }
 
 svg#filters {
   display: none; }
@@ -139,7 +151,7 @@ section#home {
     min-height: 100px;
     opacity: 0.7;
     text-decoration: none;
-    background-color: #43c341; }
+    background-color: #50e5b7; }
     section#home .subject:hover, section#home .subject:focus {
       text-decoration: none;
       opacity: 1;
@@ -174,6 +186,13 @@ section#home {
       height: 0;
       left: 0;
       top: 0; }
+
+main {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #FF8C00;
+  text-align: center; }
 
 nav {
   position: fixed;
