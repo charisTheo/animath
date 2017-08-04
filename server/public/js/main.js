@@ -7,7 +7,8 @@ $(document).ready(function() {
         height: '2px',
         backgroundColor: "orange",
         position: "absolute",
-        zIndex: -1
+        zIndex: -1,
+        bottom: 0
     }).prependTo("nav ul");
 
     $('nav a').hover(function(){

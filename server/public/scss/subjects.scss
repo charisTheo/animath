@@ -4,7 +4,7 @@ section#home {
     flex-wrap: wrap;
     justify-content: center;
     .subject {
-        flex-basis: 100px;
+        flex-basis: auto;
         flex-flow: row wrap;
         margin: 5px;
         display: table;
@@ -17,16 +17,33 @@ section#home {
         &:focus {
             text-decoration: none;
             opacity: 1;
+            padding: 20px;
             .subject-title {
                 font-size: 20px;
             }
+            .subject-description {
+                position: relative;
+                opacity: 1;
+            }
         }
         .subject-title {
+            @include transition-all();
             margin: 0;
             vertical-align: middle;
             display: table-cell;
             padding: 20px;
             font-size: 14px;
+        }
+        .subject-description {
+            @include transition('all 2s ease-in-out');
+            display: table-row;
+            position: absolute;
+            opacity: 0;
+            color: $grey;
+            width: 0;
+            height: 0;
+            left: 0;
+            top: 0;
         }
     }
 }

@@ -1,5 +1,5 @@
 nav {
-    @extend nav-font;
+    @extend .nav-font;
     position: fixed;
     z-index: 999;
     ul {
