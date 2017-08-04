@@ -100,7 +100,7 @@ label.form-label {
   transition: all 0.35s;
   cursor: pointer;
   font-size: 18px;
-  color: #EA2E49;
+  color: #2E0927;
   display: inline-block;
   position: absolute;
   top: -7px; }
@@ -116,7 +116,7 @@ input.form-group-item {
   outline: none;
   outline-style: none;
   border: none;
-  border-bottom: 2px solid #EA2E49; }
+  border-bottom: 2px solid #2E0927; }
   input.form-group-item:active, input.form-group-item:focus {
     outline: none;
     outline-style: none; }
@@ -139,7 +139,7 @@ section#home {
     min-height: 100px;
     opacity: 0.7;
     text-decoration: none;
-    background-color: #c6a934; }
+    background-color: #43c341; }
     section#home .subject:hover, section#home .subject:focus {
       text-decoration: none;
       opacity: 1;
@@ -186,4 +186,23 @@ nav {
       margin: 10px; }
       nav ul li a {
         text-decoration: none;
-        color: red; }
+        color: #D90000; }
+
+footer {
+  bottom: 0;
+  min-height: 100px;
+  width: 100%;
+  background-color: #2F343B;
+  text-align: center;
+  display: table; }
+  footer ul {
+    vertical-align: middle;
+    display: table-cell;
+    list-style: none;
+    padding: 20px;
+    margin: 10px; }
+    footer ul > li {
+      display: inline-block;
+      padding: 10px; }
+      footer ul > li > a {
+        color: #aaa; }

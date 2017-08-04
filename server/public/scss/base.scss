@@ -89,7 +89,7 @@ h6 {
 //     z-index: 9999;
 //     width: 100vw;
 //     height: 100vh;
-//     background: url('../img/svg/bars.svg') 50% 50% no-repeat $pink;
+//     background: url('../img/svg/bars.svg') 50% 50% no-repeat $purple;
 // }
 
 .heading-font {
@@ -116,7 +116,7 @@ label.form-label {
     @include transition-all(); 
     cursor: pointer;
     font-size: 18px;
-    color: $pink;
+    color: $purple;
     display: inline-block;
     position: absolute;
     top: -7px;
@@ -133,7 +133,7 @@ input.form-group-item {
     outline: none;
     outline-style: none;
     border: none;
-    border-bottom: 2px solid $pink;
+    border-bottom: 2px solid $purple;
     &:active,
     &:focus {
         outline: none;

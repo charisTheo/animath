@@ -5,7 +5,7 @@ $(document).ready(function() {
     $('<div id="nav-blob"></div>').css({
         width: 0,
         height: '2px',
-        backgroundColor: "orange",
+        backgroundColor: "#FF8C00",
         position: "absolute",
         zIndex: -1,
         bottom: 0

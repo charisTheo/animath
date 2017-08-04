@@ -1,0 +1,23 @@
+footer {
+    bottom: 0;
+    min-height: 100px;
+    width: 100%;
+    background-color: $grey;
+    // display: flex;
+    text-align: center;
+    display: table;
+    ul {
+        vertical-align: middle;
+        display: table-cell;
+        list-style: none;
+        padding: 20px;
+        margin: 10px;
+        > li {
+            display: inline-block;
+            padding: 10px;
+            > a {
+                color: $grey-light;
+            }
+        }
+    }
+}

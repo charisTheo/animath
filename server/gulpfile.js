@@ -9,7 +9,7 @@ gulp.task('browserSync', ['nodemon'], function() {
     browserSync({
         proxy: 'localhost:3000/',
         port: 5000,
-        files: ["public/css/*.css", "public/js/*.js"]
+        files: ["public/css/*.css", "public/views/*.hbs", "public/views/partials/*.hbs",  "public/js/*.js"]
     });
 });
 
@@ -37,7 +37,7 @@ gulp.task('scss', function(){
  
 gulp.task('default', ['scss', 'browserSync'], function () {
   gulp.watch('./public/scss/*.scss', ['scss']);
-//   gulp.watch('./views/*.hbs', browserSync.reload);
-//   gulp.watch('./views/partials/*.hbs', browserSync.reload);
+  gulp.watch('./views/*.hbs', browserSync.reload);
+  gulp.watch('./views/partials/*.hbs', browserSync.reload);
   gulp.watch('./public/js/*.js', browserSync.reload);
 });
