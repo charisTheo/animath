@@ -4,7 +4,11 @@
 <head>
     {{> meta}} {{> links}}
     <title>Sequences</title>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script>
+    <script src="js/animation.gsap.js"></script>
+
     <script src="js/subjects/sequences.js"></script>
 </head>
 
@@ -14,11 +18,71 @@
         <a class="homeArrowButton" href="/"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
         <h2 class="page-title">Sequences</h2>
         <main>
-            <div class="content">
-                <h4 class="description">A sequence is a collection of numbers (possibly infinite) that can appear multiple times at deferent positions in the sequence.</h4>
+            <section id="intro" class="subject-section">
+                <div class="content">
+                    <h4 class="description">
+                        A sequence is a <span>collection</span> of numbers (possibly infinite) that can appear <span>multiple</span>                        times at different positions in the sequence.
+                    </h4>
+                </div>
+            </section>
 
-            </div>
+            <section id="example-1" class="subject-section">
+                <div class="content">
+                    <h4 id="example1">
+                        <strong>a</strong><span class="subscript">n</span> = {2, 7, 100, 5.6, …}
+                    </h4>
+
+                </div>
+            </section>
+
+            <section id="example-2" class="subject-section">
+                <div class="content">
+                    <h4 id="example2">
+                        <div class="box">
+                            <strong>b</strong><span class="subscript">n</span> = 
+                        </div>
+                        <div class="box">
+                        {
+                        </div>
+                        <div class="box">
+                        1,
+                        </div>                        
+                        <div class="box">
+                        2,
+                        </div>
+                        <div class="box">
+                        3,
+                        </div>
+                        <div class="box">
+                        4,
+                        </div>
+                        <div class="box">
+                        5,
+                        </div>
+                        <div class="box">
+                        …
+                        </div>
+                        <div class="box">
+                        }
+                        </div>
+                    </h4>
+                </div>
+            </section>
+
+            <section id="example-3" class="subject-section">
+                <div class="content">
+                    <h4 id="example3">
+                        <strong>a</strong><span class="subscript">n</span> = {2, 7, 100, 5.6, …}
+                    </h4>
+
+                </div>
+            </section>
         </main>
+
+        <div id="scrollReminder">
+            <p>Scroll for some math magic!</p>
+            <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
+        </div>
     </div>
 </body>
 

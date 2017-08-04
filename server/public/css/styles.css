@@ -151,7 +151,7 @@ section#home {
     min-height: 100px;
     opacity: 0.7;
     text-decoration: none;
-    background-color: #839826; }
+    background-color: #5de00f; }
     section#home .subject:hover, section#home .subject:focus {
       text-decoration: none;
       opacity: 1;
@@ -187,17 +187,40 @@ section#home {
       left: 0;
       top: 0; }
 
-main {
-  width: 100vw;
+section.subject-section {
+  width: 100%;
   height: 100vh;
   overflow: hidden;
   background-color: #FF8C00;
   text-align: center;
-  display: table; }
-  main .content {
+  display: table;
+  position: initial; }
+  section.subject-section .content {
+    padding: 20px;
     display: table-cell;
     text-align: center;
-    vertical-align: middle; }
+    vertical-align: middle;
+    color: #2E0927; }
+  section.subject-section#intro .description {
+    word-spacing: 5px;
+    line-height: 36px;
+    font-size: 1.5em; }
+    section.subject-section#intro .description span {
+      color: #D90000;
+      font-weight: bolder; }
+  section.subject-section#example-1 #example1 {
+    opacity: 0; }
+  section.subject-section#example-2 #example2 .box {
+    left: 100%;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    position: relative; }
+
+#scrollReminder {
+  position: absolute;
+  text-align: center;
+  width: 100%; }
 
 nav {
   position: fixed;
@@ -230,3 +253,13 @@ footer {
       padding: 10px; }
       footer ul > li > a {
         color: #aaa; }
+
+span.subscript {
+  position: relative;
+  top: 0.5em;
+  font-size: 0.8em; }
+
+span.superscript {
+  position: relative;
+  bottom: 0.5em;
+  font-size: 0.8em; }
