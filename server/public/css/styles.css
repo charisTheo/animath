@@ -151,7 +151,7 @@ section#home {
     min-height: 100px;
     opacity: 0.7;
     text-decoration: none;
-    background-color: #50e5b7; }
+    background-color: #839826; }
     section#home .subject:hover, section#home .subject:focus {
       text-decoration: none;
       opacity: 1;
@@ -192,7 +192,12 @@ main {
   height: 100vh;
   overflow: hidden;
   background-color: #FF8C00;
-  text-align: center; }
+  text-align: center;
+  display: table; }
+  main .content {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle; }
 
 nav {
   position: fixed;
