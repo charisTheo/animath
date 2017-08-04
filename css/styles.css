@@ -1,0 +1,46 @@
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+*::-webkit-scrollbar {
+    width: 5px;
+}
+*::-webkit-scrollbar-track {
+    background-color: grey;
+} 
+*::-webkit-scrollbar-thumb {
+    background: orangered;
+}
+
+section {
+    width: 100%;
+    height: 100vh;
+}
+#home {
+    background-color: lightcoral;
+}
+#about {
+    background-color: lightblue;
+}
+#buy {
+    background-color: lightgreen;
+}
+#gifts {
+    background-color: lightsalmon;
+}
+
+ul {
+    list-style: none;
+    position: fixed;
+}
+
+ul li {
+    display: inline-block;
+    margin: 10px;
+    z-index: 3;
+}
+a {
+    text-decoration: none;
+    color: red;
+}
