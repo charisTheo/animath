@@ -85,7 +85,7 @@ h2,
 h3,
 h4,
 h5,
-h6, section.subject-section#example-2 .box {
+h6, section.subject-section#seq-example-2 .box {
   font-family: 'Comfortaa', Helvetica, sans-serif;
   font-weight: bold; }
 
@@ -151,7 +151,7 @@ section#home {
     min-height: 100px;
     opacity: 0.7;
     text-decoration: none;
-    background-color: #34d8d9; }
+    background-color: #38fe05; }
     section#home .subject:hover, section#home .subject:focus {
       text-decoration: none;
       opacity: 1;
@@ -213,21 +213,32 @@ section.subject-section {
       border-radius: 10px;
       margin: 30px auto;
       width: 0; }
-  section.subject-section#example-1 #example1 {
+  section.subject-section#seq-example-1 #example1 {
     opacity: 0; }
-  section.subject-section#example-2 {
+  section.subject-section#seq-example-2 {
     padding-top: 60vh; }
-    section.subject-section#example-2 .box {
+    section.subject-section#seq-example-2 .box {
       left: 100%;
       display: inline-block;
       margin: 0;
       padding: 3px;
       position: relative; }
+  section.subject-section#seq-example-3, section.subject-section#seq-example-4 {
+    padding: 0 20px 20px; }
+    section.subject-section#seq-example-3 .content, section.subject-section#seq-example-4 .content {
+      vertical-align: initial;
+      padding-top: 0; }
 
 #scrollReminder {
   position: absolute;
   text-align: center;
   width: 100%; }
+
+h1#eight {
+  text-align: center;
+  color: #04756F;
+  height: 20px;
+  display: table-row; }
 
 nav {
   position: fixed;

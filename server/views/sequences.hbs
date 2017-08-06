@@ -10,6 +10,7 @@
     <script src="js/animation.gsap.js"></script>
 
     <script src="js/subjects/sequences.js"></script>
+    {{!-- <script src="js/jquery.drawsvg.js"></script> --}}
 </head>
 
 <body>
@@ -26,10 +27,10 @@
                 </div>
             </section>
 
-            <section id="example-1" class="subject-section">
+            <section id="seq-example-1" class="subject-section">
                 <div class="content">
                     <h4 id="example1">
-                        <strong>a</strong><span class="subscript">n</span> = {2, 7, 100, 5.6, …}
+                        <strong>a</strong><sub>n</sub> = {2, 7, 100, 5.6, …}
                     </h4>
                     <hr id="example1-hr">
                     <h4 class="description" id="example1-description">
@@ -38,50 +39,74 @@
                 </div>
             </section>
 
-            <section id="example-2" class="subject-section">
+            <section id="seq-example-2" class="subject-section">
                 <div class="content">
-                        <div class="box">
-                            <strong>b</strong><span class="subscript">n</span> = 
-                        </div>
-                        <div class="box">
+                    <div class="box">
+                        <strong>b</strong><sub>n</sub> =
+                    </div>
+                    <div class="box">
                         {
-                        </div>
-                        <div class="box">
+                    </div>
+                    <div class="box">
                         1,
-                        </div>                        
-                        <div class="box">
+                    </div>
+                    <div class="box">
                         2,
-                        </div>
-                        <div class="box">
+                    </div>
+                    <div class="box">
                         3,
-                        </div>
-                        <div class="box">
+                    </div>
+                    <div class="box">
                         4,
-                        </div>
-                        <div class="box">
+                    </div>
+                    <div class="box">
                         5,
-                        </div>
-                        <div class="box">
+                    </div>
+                    <div class="box">
                         …
-                        </div>
-                        <div class="box">
+                    </div>
+                    <div class="box">
                         }
-                        </div>
-                        <hr id="example2-hr">                        
-                        <h4 class="description" id="example2-description">
-                            or following a pattern 
-                        </h4>
+                    </div>
+                    <hr id="example2-hr">
+                    <h4 class="description" id="example2-description">
+                        or following a pattern
+                    </h4>
                 </div>
             </section>
-
-            <section id="example-3" class="subject-section">
+            <section id="svg-line-section" class="subject-section">
+                <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+                <svg xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                    xmlns="http://www.w3.org/2000/svg" sodipodi:docname="line.svg" height="500" width="100" version="1.1" xmlns:cc="http://creativecommons.org/ns#"
+                    xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 100 500.00001" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd">
+                    <sodipodi:namedview bordercolor="#666666" showgrid="false" borderopacity="1.0" units="px" />
+                    <g transform="translate(0 -552.36)">
+                        <path id="line" d="m41.424 588.86c-117.42 214.13 151.77 261.8 0 427" sodipodi:nodetypes="cc" inkscape:connector-curvature="0"
+                            stroke="#ff2d00" stroke-linecap="round" stroke-dasharray="11, 22" stroke-width="5.5" fill="none"
+                        />
+                    </g>
+                </svg>
+            </section>
+            <section id="seq-example-3" class="subject-section">
                 <div class="content">
-                    <h4 id="example3">
-                        <strong>c</strong><span class="subscript">n</span> = {1, 0, 1, 0, 1, …}
+                    <h4 class="description" id="example3">
+                        <strong>c</strong><sub>n</sub> = { 1,
+                        <sup>1</sup>&frasl;<sub>2</sub>,
+                        <sup>1</sup>&frasl;<sub>4</sub>,
+                        <sup>1</sup>&frasl;<sub>8</sub>,
+                        <sup>1</sup>&frasl;<sub>16</sub>, …}
                     </h4>
-                    <hr>                    
-                    <h4 class="description" id="example3-description">
-                        or binary! 
+                </div>
+            <h1 id="eight">8</h1>
+            </section>
+            <section id="seq-example-4" class="subject-section">
+                <div class="content">
+                    <h4 id="example4">
+                        <strong>c</strong><sub>n</sub> = {8, 8, 8, 8, 8, …}
+                    </h4>
+                    <hr>
+                    <h4 class="description" id="example4-description">
+                        could have a repeating number
                     </h4>
                 </div>
             </section>
