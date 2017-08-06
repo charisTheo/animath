@@ -65,8 +65,6 @@ section.subject-section {
         text-align: center;
         vertical-align: middle;
         color: $purple;
-    }
-    &#intro {
         .description {
             word-spacing: 5px;
             line-height: 36px;
@@ -76,6 +74,12 @@ section.subject-section {
                 font-weight: bolder;
             }
         }
+        hr {
+            border: 1px solid red;
+            border-radius: 10px;
+            margin: 30px auto;
+            width: 0;
+        }
     }
     &#example-1 {
         #example1 {
@@ -83,14 +87,14 @@ section.subject-section {
         }
     }
     &#example-2 {
-        #example2 {
-            .box {
-                left: 100%;
-                display: inline-block;
-                margin: 0;
-                padding: 0;
-                position: relative;
-            }
+        padding-top: 60vh;
+        .box {
+            @extend .heading-font;
+            left: 100%;
+            display: inline-block;
+            margin: 0;
+            padding: 3px;
+            position: relative;
         }
     }
 }
