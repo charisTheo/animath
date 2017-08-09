@@ -102,6 +102,22 @@ $(document).ready(()=>{
         .triggerHook('onCenter')
         .addTo(controller);
 
-    
+
+    //#example5 
+    var tween5 = new TimelineMax()
+        .add(TweenMax.staggerFromTo('path.convergentLine', 1, {opacity: 0}, {opacity: 1, ease: Linear.easeNone}, 0.10))
+        .add(
+            TweenMax.fromTo('rect#convergentRectangle', 1, {scaleY: 0}, {
+                scaleY: 1,
+                transformOrigin:"top left", 
+                ease: Linear.easeNone
+            })
+        );
+
+    var scene5 = new ScrollMagic.Scene({triggerElement: '#convergent', duration: '300%'})
+        .setTween(tween5)
+        .setPin('#convergent', {pushFollowers: true})
+        .triggerHook('onLeave')
+        .addTo(controller);
 
 });
