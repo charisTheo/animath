@@ -60,9 +60,7 @@ section.subject-section {
     position: initial;
     .content {
         padding: 20px;
-        display: table-cell;
         text-align: center;
-        vertical-align: middle;
         color: $purple;
         .description {
             word-spacing: 5px;
@@ -99,13 +97,43 @@ section.subject-section {
         padding: 0 20px 20px;
         .content {
             padding-top: 0;
-            display: block;
         }
     }
     &#seq-example-4 {
         @extend #seq-example-3;
         #example4 {
             @include transform(scale(1.5));
+        }
+    }
+    &#seq-example-5 {
+        .content {
+            padding: 0;
+            #divergent,
+            #convergent {
+                width: 50%;
+                display: inline-block;
+                letter-spacing: 0px;
+                .convergent-heading,
+                .divergent-heading {
+                    @extend .heading-font;
+                    bottom: 0;
+                    position: relative;
+                    display: block;
+                    margin: 25px 0;
+                    &:not(:first-child) {
+                        color: $orange;
+                        font-size: small;
+                    }
+                }
+            }
+            #convergent {
+                float: left;
+                text-align: left;
+            }
+            #divergent {
+                float: right;
+                text-align: right;
+            }
         }
     }
 }

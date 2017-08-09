@@ -44,6 +44,10 @@ section {
     padding: 70px 20px 20px;
     text-align: center;
 }
+.middle-vertical-align {
+    display: table-cell;
+    vertical-align: middle;
+}
 .bg-blue {
     background-color: $blue;
 }

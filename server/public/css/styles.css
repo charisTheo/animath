@@ -42,6 +42,10 @@ section {
   padding: 70px 20px 20px;
   text-align: center; }
 
+.middle-vertical-align {
+  display: table-cell;
+  vertical-align: middle; }
+
 .bg-blue {
   background-color: #04756F; }
 
@@ -88,7 +92,10 @@ h2,
 h3,
 h4,
 h5,
-h6, section.subject-section#seq-example-2 .box {
+h6, section.subject-section#seq-example-2 .box, section.subject-section#seq-example-5 .content #divergent .convergent-heading,
+section.subject-section#seq-example-5 .content #divergent .divergent-heading,
+section.subject-section#seq-example-5 .content #convergent .convergent-heading,
+section.subject-section#seq-example-5 .content #convergent .divergent-heading {
   font-family: 'Comfortaa', Helvetica, sans-serif;
   font-weight: bold; }
 
@@ -154,7 +161,7 @@ section#home {
     min-height: 100px;
     opacity: 0.7;
     text-decoration: none;
-    background-color: #6cb3af; }
+    background-color: #272c9b; }
     section#home .subject:hover, section#home .subject:focus {
       text-decoration: none;
       opacity: 1;
@@ -199,9 +206,7 @@ section.subject-section {
   position: initial; }
   section.subject-section .content {
     padding: 20px;
-    display: table-cell;
     text-align: center;
-    vertical-align: middle;
     color: #2E0927; }
     section.subject-section .content .description {
       word-spacing: 5px;
@@ -226,14 +231,40 @@ section.subject-section {
   section.subject-section#seq-example-3, section.subject-section#seq-example-4 {
     padding: 0 20px 20px; }
     section.subject-section#seq-example-3 .content, section.subject-section#seq-example-4 .content {
-      padding-top: 0;
-      display: block; }
+      padding-top: 0; }
   section.subject-section#seq-example-4 #example4 {
     transform: scale(1.5);
     -webkit-transform: scale(1.5);
     -moz-transform: scale(1.5);
     -ms-transform: scale(1.5);
     -o-transform: scale(1.5); }
+  section.subject-section#seq-example-5 .content {
+    padding: 0; }
+    section.subject-section#seq-example-5 .content #divergent,
+    section.subject-section#seq-example-5 .content #convergent {
+      width: 50%;
+      display: inline-block;
+      letter-spacing: 0px; }
+      section.subject-section#seq-example-5 .content #divergent .convergent-heading,
+      section.subject-section#seq-example-5 .content #divergent .divergent-heading,
+      section.subject-section#seq-example-5 .content #convergent .convergent-heading,
+      section.subject-section#seq-example-5 .content #convergent .divergent-heading {
+        bottom: 0;
+        position: relative;
+        display: block;
+        margin: 25px 0; }
+        section.subject-section#seq-example-5 .content #divergent .convergent-heading:not(:first-child),
+        section.subject-section#seq-example-5 .content #divergent .divergent-heading:not(:first-child),
+        section.subject-section#seq-example-5 .content #convergent .convergent-heading:not(:first-child),
+        section.subject-section#seq-example-5 .content #convergent .divergent-heading:not(:first-child) {
+          color: #FF2D00;
+          font-size: small; }
+    section.subject-section#seq-example-5 .content #convergent {
+      float: left;
+      text-align: left; }
+    section.subject-section#seq-example-5 .content #divergent {
+      float: right;
+      text-align: right; }
 
 #scrollReminder {
   position: absolute;
