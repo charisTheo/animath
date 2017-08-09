@@ -44,14 +44,17 @@ section {
     padding: 70px 20px 20px;
     text-align: center;
 }
-#home {
+.bg-blue {
     background-color: $blue;
 }
-#about {
-    background-color: $yellow;
+.bg-orange {
+    background-color: $orange;
 }
-#contact {
+.bg-red {
     background-color: $red;
+}
+.bg-yellow {
+    background-color: $yellow;
 }
 .SubjectPageHeadings {
     position: absolute;
