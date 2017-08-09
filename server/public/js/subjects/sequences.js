@@ -103,16 +103,27 @@ $(document).ready(()=>{
         .addTo(controller);
 
 
-    //#example5 
+    //#example5
+    var rectHeight = 0;
+    var lineNumber = 1;
+    $('path.convergentLine').hide();
+    $('#line0').toggle("drop", {direction: "down"});
+    function showLine(){
+        rectHeight++;
+        if (rectHeight % 12 == 0) {
+            $(`#line${lineNumber}`).toggle("drop", {direction: "down"});
+            lineNumber++;
+        }
+    };
+    
     var tween5 = new TimelineMax()
-        .add(TweenMax.staggerFromTo('path.convergentLine', 1, {opacity: 0}, {opacity: 1, ease: Linear.easeNone}, 0.10))
-        .add(
-            TweenMax.fromTo('rect#convergentRectangle', 1, {scaleY: 0}, {
+        // .staggerFromTo('path.convergentLine', 0.9, {scaleX: 0}, {scaleX: 1, transformOrigin: "0 50%", ease: Linear.easeNone}, 0.1)
+        .fromTo('rect#convergentRectangle', 2, {scaleY: 0}, {
                 scaleY: 1,
                 transformOrigin:"top left", 
-                ease: Linear.easeNone
-            })
-        );
+                ease: Linear.easeNone,
+                onUpdate: showLine
+            });
 
     var scene5 = new ScrollMagic.Scene({triggerElement: '#convergent', duration: '300%'})
         .setTween(tween5)
