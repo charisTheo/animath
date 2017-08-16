@@ -61,7 +61,7 @@ $(document).ready(()=>{
         .addTo(controller);
 
     var $path = $('path#line')
-    var lineLength = $path[0].getTotalLength();
+        lineLength = $path[0].getTotalLength();
     $path.css('stroke-dasharray', lineLength);
     $path.css("stroke-dashoffset", lineLength);
 
@@ -104,28 +104,25 @@ $(document).ready(()=>{
 
 
     //#example5
-    var rectHeight = 0;
-    var lineNumber = 1;
-    $('path.convergentLine').hide();
-    $('#line0').toggle("drop", {direction: "down"});
-    function showLine(){
-        rectHeight++;
-        if (rectHeight % 12 == 0) {
-            $(`#line${lineNumber}`).toggle("drop", {direction: "down"});
-            lineNumber++;
-        }
-    };
-    
+    for (var i = 0; i <= 21; i++) {
+        var $line = $('path.line');
+        var lineLength = $line[i].getTotalLength();
+        $line.css('stroke-dashoffset', lineLength);
+        $line.css('stroke-dasharray', lineLength);
+        $line.css('stroke', '#FF8C00');
+        i++;
+    }
     var tween5 = new TimelineMax()
-        // .staggerFromTo('path.convergentLine', 0.9, {scaleX: 0}, {scaleX: 1, transformOrigin: "0 50%", ease: Linear.easeNone}, 0.1)
-        .fromTo('rect#convergentRectangle', 2, {scaleY: 0}, {
-                scaleY: 1,
+        .staggerTo('path.line', 1, {strokeDashoffset: 0, stroke: '#04756F', ease: Linear.easeNone}, 0.1)
+        .staggerTo('#rectGradient stop', 3, {
+            stopColor: '#2E0927',
+            cycle: {stopColor: ['#04756F', '#D90000', '#FF2D00']}}, 0.3, 1)
+        .fromTo('rect#convergentRectangle', 3, {scaleY: 0}, {
+                scaleY: 2,
                 transformOrigin:"top left", 
-                ease: Linear.easeNone,
-                onUpdate: showLine
-            });
-
-    var scene5 = new ScrollMagic.Scene({triggerElement: '#convergent', duration: '300%'})
+                ease: Linear.easeNone
+            }, 0);
+    var scene5 = new ScrollMagic.Scene({triggerElement: '#convergent', duration: '400%'})
         .setTween(tween5)
         .setPin('#convergent', {pushFollowers: true})
         .triggerHook('onLeave')

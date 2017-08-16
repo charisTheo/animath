@@ -129,6 +129,9 @@ section.subject-section {
             #convergent {
                 float: left;
                 text-align: left;
+                .convergentLine {
+                    position: absolute;
+                }
             }
             #divergent {
                 float: right;
