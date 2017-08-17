@@ -113,19 +113,25 @@ $(document).ready(()=>{
         i++;
     }
     var tween5 = new TimelineMax()
+    //divergent
         .staggerTo('path.line', 1, {strokeDashoffset: 0, stroke: '#04756F', ease: Linear.easeNone}, 0.1)
         .staggerTo('#rectGradient stop', 3, {
             stopColor: '#2E0927',
             cycle: {stopColor: ['#04756F', '#D90000', '#FF2D00']}}, 0.3, 1)
-        .fromTo('rect#convergentRectangle', 3, {scaleY: 0}, {
+        .fromTo('rect#divergentRectangle', 3, {scaleY: 0}, {
                 scaleY: 2,
-                transformOrigin:"top left", 
+                transformOrigin:"top left",
                 ease: Linear.easeNone
-            }, 0);
-    var scene5 = new ScrollMagic.Scene({triggerElement: '#convergent', duration: '400%'})
+            }, 0)
+        //convergent
+        .to('rect#convergentRectangle', 3, {scaleY: "50%", transformOrigin:"bottom left", ease: Linear.easeNone}, 0);
+
+    var scene5_1 = new ScrollMagic.Scene({triggerElement: '#example-5-headings', duration: '400%'})
         .setTween(tween5)
-        .setPin('#convergent', {pushFollowers: true})
+        //setPinOffset
+        .setPin('#example5-pin', {pushFollowers: true})
         .triggerHook('onLeave')
         .addTo(controller);
+        
 
 });

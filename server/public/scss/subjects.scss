@@ -108,32 +108,34 @@ section.subject-section {
     &#seq-example-5 {
         .content {
             padding: 0;
+            .convergent-heading,
+            .divergent-heading {
+                @extend .heading-font;
+                bottom: 0;
+                position: relative;
+                display: block;
+                margin: 25px 0;
+                &:not(:first-child) {
+                    color: $orange;
+                    font-size: small;
+                }
+            }
             #divergent,
             #convergent {
                 width: 50%;
                 display: inline-block;
                 letter-spacing: 0px;
-                .convergent-heading,
-                .divergent-heading {
-                    @extend .heading-font;
-                    bottom: 0;
-                    position: relative;
-                    display: block;
-                    margin: 25px 0;
-                    &:not(:first-child) {
-                        color: $orange;
-                        font-size: small;
-                    }
-                }
             }
-            #convergent {
+            #divergent,
+            #divergent-headings {
                 float: left;
                 text-align: left;
-                .convergentLine {
+                svg {
                     position: absolute;
                 }
             }
-            #divergent {
+            #convergent,
+            #convergent-headings {
                 float: right;
                 text-align: right;
             }
