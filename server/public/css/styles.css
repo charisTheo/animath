@@ -92,8 +92,8 @@ h2,
 h3,
 h4,
 h5,
-h6, section.subject-section#seq-example-2 .box, section.subject-section#seq-example-5 .content .convergent-heading,
-section.subject-section#seq-example-5 .content .divergent-heading {
+h6, section.subject-section#seq-example-2 .box, section.subject-section#seq-example-5 .content #example5-pin .convergent-heading,
+section.subject-section#seq-example-5 .content #example5-pin .divergent-heading {
   font-family: 'Comfortaa', Helvetica, sans-serif;
   font-weight: bold; }
 
@@ -159,7 +159,7 @@ section#home {
     min-height: 100px;
     opacity: 0.7;
     text-decoration: none;
-    background-color: #eae573; }
+    background-color: #17298d; }
     section#home .subject:hover, section#home .subject:focus {
       text-decoration: none;
       opacity: 1;
@@ -238,32 +238,34 @@ section.subject-section {
     -o-transform: scale(1.5); }
   section.subject-section#seq-example-5 .content {
     padding: 0; }
-    section.subject-section#seq-example-5 .content .convergent-heading,
-    section.subject-section#seq-example-5 .content .divergent-heading {
-      bottom: 0;
-      position: relative;
-      display: block;
-      margin: 25px 0; }
-      section.subject-section#seq-example-5 .content .convergent-heading:not(:first-child),
-      section.subject-section#seq-example-5 .content .divergent-heading:not(:first-child) {
-        color: #FF2D00;
-        font-size: small; }
-    section.subject-section#seq-example-5 .content #divergent,
-    section.subject-section#seq-example-5 .content #convergent {
-      width: 50%;
-      display: inline-block;
-      letter-spacing: 0px; }
-    section.subject-section#seq-example-5 .content #divergent,
-    section.subject-section#seq-example-5 .content #divergent-headings {
-      float: left;
-      text-align: left; }
-      section.subject-section#seq-example-5 .content #divergent svg,
-      section.subject-section#seq-example-5 .content #divergent-headings svg {
-        position: absolute; }
-    section.subject-section#seq-example-5 .content #convergent,
-    section.subject-section#seq-example-5 .content #convergent-headings {
-      float: right;
-      text-align: right; }
+    section.subject-section#seq-example-5 .content #example5-pin {
+      padding: 20px 0; }
+      section.subject-section#seq-example-5 .content #example5-pin .convergent-heading,
+      section.subject-section#seq-example-5 .content #example5-pin .divergent-heading {
+        bottom: 0;
+        position: relative;
+        display: block;
+        margin: 25px 0; }
+        section.subject-section#seq-example-5 .content #example5-pin .convergent-heading:not(:first-child),
+        section.subject-section#seq-example-5 .content #example5-pin .divergent-heading:not(:first-child) {
+          color: #FF2D00;
+          font-size: small; }
+      section.subject-section#seq-example-5 .content #example5-pin #divergent,
+      section.subject-section#seq-example-5 .content #example5-pin #convergent {
+        width: 50%;
+        display: inline-block;
+        letter-spacing: 0px; }
+      section.subject-section#seq-example-5 .content #example5-pin #divergent,
+      section.subject-section#seq-example-5 .content #example5-pin #divergent-headings {
+        float: left;
+        text-align: left; }
+        section.subject-section#seq-example-5 .content #example5-pin #divergent svg,
+        section.subject-section#seq-example-5 .content #example5-pin #divergent-headings svg {
+          position: absolute; }
+      section.subject-section#seq-example-5 .content #example5-pin #convergent,
+      section.subject-section#seq-example-5 .content #example5-pin #convergent-headings {
+        float: right;
+        text-align: right; }
 
 #scrollReminder {
   position: absolute;

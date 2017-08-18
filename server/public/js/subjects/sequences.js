@@ -104,16 +104,44 @@ $(document).ready(()=>{
 
 
     //#example5
-    for (var i = 0; i <= 21; i++) {
-        var $line = $('path.line');
-        var lineLength = $line[i].getTotalLength();
-        $line.css('stroke-dashoffset', lineLength);
-        $line.css('stroke-dasharray', lineLength);
-        $line.css('stroke', '#FF8C00');
-        i++;
+    function configSVG($el) {
+        for (var i = 0; i < $el.length; i++) {
+            var lineLength = $el[i].getTotalLength();
+            $el.css('stroke-dashoffset', lineLength);
+            $el.css('stroke-dasharray', lineLength);
+            $el.css('stroke', '#FF8C00');
+            i++;
+        }
     }
-    var tween5 = new TimelineMax()
+    //convergent
+    // [0.5, 0.25, 0.125, 0.0625]
+    // function updateTween5(){
+    //     if (tween5_1.progress() > 0.75) {
+    //         tween5_1.updateTo({scaleY: 0.0625}, false);
+    //     } else if (tween5_1.progress() > 0.5) {
+    //         tween5_1.updateTo({scaleY: 0.125}, false);
+    //     } else if (tween5_1.progress() > 0.25) {
+    //         tween5_1.updateTo({scaleY: 0.25}, false);
+    //     } else {
+    //         tween5_1.updateTo({scaleY: 0.5}, false);                
+    //     }
+    //     scene5_1.setTween(tween5_1);            
+    // };
+    // var tween5_1 = TweenMax.to('rect#convergentRectangle', 4, {
+    //     scaleY: 1,
+    //     ease: Bounce.easeNone
+    // }, 0.5);
+    // var scene5_1 = new ScrollMagic.Scene({triggerElement: '#example5-pin', duration: '400%'})
+    //     .setTween(tween5_1)
+    //     .triggerHook('onLeave')
+    //     .addTo(controller);
+
     //divergent
+    var $line = $('path.line');
+    var $fractions = $('path.fraction');
+    configSVG($line);
+    configSVG($fractions);
+    var tween5 = new TimelineMax()
         .staggerTo('path.line', 1, {strokeDashoffset: 0, stroke: '#04756F', ease: Linear.easeNone}, 0.1)
         .staggerTo('#rectGradient stop', 3, {
             stopColor: '#2E0927',
@@ -122,16 +150,18 @@ $(document).ready(()=>{
                 scaleY: 2,
                 transformOrigin:"top left",
                 ease: Linear.easeNone
+                // onUpdate: updateTween5
             }, 0)
         //convergent
-        .to('rect#convergentRectangle', 3, {scaleY: "50%", transformOrigin:"bottom left", ease: Linear.easeNone}, 0);
-
-    var scene5_1 = new ScrollMagic.Scene({triggerElement: '#example-5-headings', duration: '400%'})
-        .setTween(tween5)
-        //setPinOffset
-        .setPin('#example5-pin', {pushFollowers: true})
-        .triggerHook('onLeave')
-        .addTo(controller);
+        .staggerFromTo('path.fraction', 3, {opacity: 0}, {strokeDashoffset: 0, stroke: '#04756F', opacity: 1, ease: Linear.easeOut}, 1.5, 0)
+        .staggerFromTo('path.fraction', 3, {opacity: 1}, {opacity: 0, ease: Linear.easeOut}, 1.5, 2)
+        .staggerFromTo('path.fraction-line', 3, {opacity: 0}, {strokeDashoffset: 0, stroke: '#04756F', opacity: 1, ease: Linear.easeOut}, 1.5, 0)
+        .to('rect#convergentRectangle', 7, {scaleY: 0.0625}, '-=9');
         
+    var scene5 = new ScrollMagic.Scene({triggerElement: '#example5-pin', duration: '400%'})
+        .setTween(tween5)
+        .triggerHook('onLeave')
+        .setPin('#example5-pin', {pushFollowers: true})
+        .addTo(controller);
 
 });
