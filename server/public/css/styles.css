@@ -159,7 +159,7 @@ section#home {
     min-height: 100px;
     opacity: 0.7;
     text-decoration: none;
-    background-color: #17298d; }
+    background-color: #2776cb; }
     section#home .subject:hover, section#home .subject:focus {
       text-decoration: none;
       opacity: 1;
@@ -239,7 +239,11 @@ section.subject-section {
   section.subject-section#seq-example-5 .content {
     padding: 0; }
     section.subject-section#seq-example-5 .content #example5-pin {
-      padding: 20px 0; }
+      padding: 20px 0;
+      width: 100%; }
+      section.subject-section#seq-example-5 .content #example5-pin #convergent-headings,
+      section.subject-section#seq-example-5 .content #example5-pin #divergent-headings {
+        max-width: 50%; }
       section.subject-section#seq-example-5 .content #example5-pin .convergent-heading,
       section.subject-section#seq-example-5 .content #example5-pin .divergent-heading {
         bottom: 0;
@@ -254,6 +258,7 @@ section.subject-section {
       section.subject-section#seq-example-5 .content #example5-pin #convergent {
         width: 50%;
         display: inline-block;
+        clear: both;
         letter-spacing: 0px; }
       section.subject-section#seq-example-5 .content #example5-pin #divergent,
       section.subject-section#seq-example-5 .content #example5-pin #divergent-headings {

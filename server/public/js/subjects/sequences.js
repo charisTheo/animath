@@ -1,28 +1,5 @@
 var idleTime = 0;
 $(document).ready(()=>{
-    /* Idle time for no scroll */
-    $('#scrollReminder').hide();
-    var idleInterval = setInterval(idleCheck, 500);
-
-    function idleCheck(){
-        idleTime++;
-        if (idleTime > 8 && $('body').scrollTop() < 50) {
-            $('#scrollReminder')
-                .css({
-                    top: window.innerHeight - 80 + 'px'
-                })
-                .toggle('fade');
-        } else if ($('body').scrollTop() > 50) {
-            $('#scrollReminder').hide();
-            clearInterval(idleInterval);
-        }
-    }
-
-    $('.description').hide();
-    //#intro
-    $('#intro-description').delay(1000).toggle('fold');
-
-    //#example
     //#example1
     var controller = new ScrollMagic.Controller();
     var tween = new TimelineMax();
@@ -60,12 +37,10 @@ $(document).ready(()=>{
         .triggerHook('onCenter')
         .addTo(controller);
 
-    var $path = $('path#line')
-        lineLength = $path[0].getTotalLength();
-    $path.css('stroke-dasharray', lineLength);
-    $path.css("stroke-dashoffset", lineLength);
-
     //#example3
+    var $path = $('path#line');
+    configSVG($path);
+    
     var tween3 = new TimelineMax();
     tween3.add(
         TweenMax.to($path, 1.5, {strokeDashoffset: 0, ease:Linear.easeNone, onComplete: function(){
@@ -104,43 +79,15 @@ $(document).ready(()=>{
 
 
     //#example5
-    function configSVG($el) {
-        for (var i = 0; i < $el.length; i++) {
-            var lineLength = $el[i].getTotalLength();
-            $el.css('stroke-dashoffset', lineLength);
-            $el.css('stroke-dasharray', lineLength);
-            $el.css('stroke', '#FF8C00');
-            i++;
-        }
-    }
-    //convergent
-    // [0.5, 0.25, 0.125, 0.0625]
-    // function updateTween5(){
-    //     if (tween5_1.progress() > 0.75) {
-    //         tween5_1.updateTo({scaleY: 0.0625}, false);
-    //     } else if (tween5_1.progress() > 0.5) {
-    //         tween5_1.updateTo({scaleY: 0.125}, false);
-    //     } else if (tween5_1.progress() > 0.25) {
-    //         tween5_1.updateTo({scaleY: 0.25}, false);
-    //     } else {
-    //         tween5_1.updateTo({scaleY: 0.5}, false);                
-    //     }
-    //     scene5_1.setTween(tween5_1);            
-    // };
-    // var tween5_1 = TweenMax.to('rect#convergentRectangle', 4, {
-    //     scaleY: 1,
-    //     ease: Bounce.easeNone
-    // }, 0.5);
-    // var scene5_1 = new ScrollMagic.Scene({triggerElement: '#example5-pin', duration: '400%'})
-    //     .setTween(tween5_1)
-    //     .triggerHook('onLeave')
-    //     .addTo(controller);
-
-    //divergent
+    //DIVERGENT
+    //SVG configuration
     var $line = $('path.line');
     var $fractions = $('path.fraction');
     configSVG($line);
+    $line.css('stroke', '#FF8C00');
     configSVG($fractions);
+    $fractions.css('stroke', '#FF8C00');
+
     var tween5 = new TimelineMax()
         .staggerTo('path.line', 1, {strokeDashoffset: 0, stroke: '#04756F', ease: Linear.easeNone}, 0.1)
         .staggerTo('#rectGradient stop', 3, {
@@ -150,9 +97,8 @@ $(document).ready(()=>{
                 scaleY: 2,
                 transformOrigin:"top left",
                 ease: Linear.easeNone
-                // onUpdate: updateTween5
             }, 0)
-        //convergent
+        //CONVERGENT
         .staggerFromTo('path.fraction', 3, {opacity: 0}, {strokeDashoffset: 0, stroke: '#04756F', opacity: 1, ease: Linear.easeOut}, 1.5, 0)
         .staggerFromTo('path.fraction', 3, {opacity: 1}, {opacity: 0, ease: Linear.easeOut}, 1.5, 2)
         .staggerFromTo('path.fraction-line', 3, {opacity: 0}, {strokeDashoffset: 0, stroke: '#04756F', opacity: 1, ease: Linear.easeOut}, 1.5, 0)
