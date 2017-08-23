@@ -2,36 +2,28 @@
 <html>
 
 <head>
-  {{> meta}}
-  {{> links}}
+  {{> meta}} {{> links}}
   <title>Interactive Tutorials</title>
 </head>
 
 <body>
-    <div class="container">
+  <div class="container">
     {{> nav}}
 
     <section id="home" class="bg-blue">
       <a class="subject" href="/sequences" aria-labelledby="sequences" aria-describedby="sequences-description">
         <h3 id="sequences" class="subject-title">Sequences</h3>
-        <small id="sequences-description" class="subject-description">A sequence is a collection of numbers (possibly infinite) that can appear multiple times at deferent positions in the sequence.
+        <small id="sequences-description" class="subject-description">
+          A sequence is a collection of numbers (possibly infinite) that can appear multiple times at deferent positions in the sequence.
         </small>
-        </a>
-      <div class="subject">
-        <h3 class="subject-title"><a href="/"></a></h3>
-      </div>
-      <div class="subject">
-        <h3 class="subject-title"><a href="/"></a></h3>
-      </div>
-      <div class="subject">
-        <h3 class="subject-title"><a href="/"></a></h3>
-      </div>
-      <div class="subject">
-        <h3 class="subject-title"><a href="/"></a></h3>
-      </div>
-      <div class="subject">
-        <h3 class="subject-title"><a href="/"></a></h3>
-      </div>
+      </a>
+      <a class="subject" href="/limits" aria-labelledby="limits" aria-describedby="limits-description">
+        <h3 id="limits" class="subject-title">Limits</h3>
+        <small id="limits-description" class="subject-description">
+          For a sequence a<sub>n</sub> to have a limit L, means it's distance from the limit can be as less as we please, so that |a<sub>n</sub> - L| tends to 0.
+        </small>
+      </a>
+
     </section>
 
 

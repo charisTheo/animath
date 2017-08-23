@@ -93,6 +93,21 @@ input:-webkit-autofill:active {
     box-shadow: 0 0 0 30px $white inset !important;
     -webkit-text-fill-color: $grey;
 }
+a,
+a:link,
+a:focus,
+a:active,
+a:visited,
+a:any-link,
+a:-moz-any-link,  
+a:-webkit-any-link {
+    text-decoration: none;
+    font-weight: bold;
+    color: inherit;
+    -moz-hyperlinktext: inherit;
+    -moz-visitedhyperlinktext: inherit;
+    -moz-activehyperlinktext: inherit;
+}
 
 h1,
 h2,

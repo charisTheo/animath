@@ -87,6 +87,21 @@ input:-webkit-autofill:active {
   box-shadow: 0 0 0 30px #DAEDE2 inset !important;
   -webkit-text-fill-color: #2F343B; }
 
+a,
+a:link,
+a:focus,
+a:active,
+a:visited,
+a:any-link,
+a:-moz-any-link,
+a:-webkit-any-link {
+  text-decoration: none;
+  font-weight: bold;
+  color: inherit;
+  -moz-hyperlinktext: inherit;
+  -moz-visitedhyperlinktext: inherit;
+  -moz-activehyperlinktext: inherit; }
+
 .heading-font, h1,
 h2,
 h3,
@@ -150,7 +165,7 @@ section#home {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center; }
-  section#home .subject {
+  section#home a.subject {
     flex-basis: auto;
     flex-flow: row wrap;
     margin: 5px;
@@ -158,18 +173,19 @@ section#home {
     min-width: 100px;
     min-height: 100px;
     opacity: 0.7;
+    color: #FF8C00;
     text-decoration: none;
-    background-color: #2776cb; }
-    section#home .subject:hover, section#home .subject:focus {
+    background-color: #6ecc27; }
+    section#home a.subject:hover, section#home a.subject:focus {
       text-decoration: none;
       opacity: 1;
       padding: 20px; }
-      section#home .subject:hover .subject-title, section#home .subject:focus .subject-title {
+      section#home a.subject:hover .subject-title, section#home a.subject:focus .subject-title {
         font-size: 20px; }
-      section#home .subject:hover .subject-description, section#home .subject:focus .subject-description {
+      section#home a.subject:hover .subject-description, section#home a.subject:focus .subject-description {
         position: relative;
         opacity: 1; }
-    section#home .subject .subject-title {
+    section#home a.subject .subject-title {
       -webkit-transition: all 0.35s;
       -moz-transition: all 0.35s;
       -ms-transition: all 0.35s;
@@ -180,7 +196,7 @@ section#home {
       display: table-cell;
       padding: 20px;
       font-size: 14px; }
-    section#home .subject .subject-description {
+    section#home a.subject .subject-description {
       -webkit-transition: "all 2s ease-in-out";
       -moz-transition: "all 2s ease-in-out";
       -ms-transition: "all 2s ease-in-out";
@@ -212,7 +228,8 @@ section.subject-section {
       font-size: 1.5em; }
       section.subject-section .content .description span {
         color: #D90000;
-        font-weight: bolder; }
+        font-weight: bolder;
+        display: inline-block; }
     section.subject-section .content hr {
       border: 1px solid red;
       border-radius: 10px;

@@ -4,7 +4,7 @@ section#home {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    .subject {
+    a.subject {
         flex-basis: auto;
         flex-flow: row wrap;
         margin: 5px;
@@ -12,6 +12,7 @@ section#home {
         min-width: 100px;
         min-height: 100px;
         opacity: 0.7;
+        color: $yellow;
         text-decoration: none;
         background-color: rgb(random(256)-1,random(256)-1,random(256)-1);
         &:hover,
@@ -69,6 +70,7 @@ section.subject-section {
             span {
                 color: $red;
                 font-weight: bolder;
+                display: inline-block;
             }
         }
         hr {

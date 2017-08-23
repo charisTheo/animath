@@ -15,6 +15,9 @@ app.get('/sequences', (req, res) => {
     res.render('sequences.hbs');
 });
 
+app.get('/limits', (req, res) => {
+    res.render('limits.hbs');
+});
 
 
 app.listen(port, () => {
