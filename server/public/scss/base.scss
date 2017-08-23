@@ -49,16 +49,19 @@ section {
     vertical-align: middle;
 }
 .bg-blue {
-    background-color: $blue;
+    @include linear-gradient($blue, #016965);
 }
 .bg-orange {
-    background-color: $orange;
+    @include linear-gradient($orange, #DA2902);
 }
 .bg-red {
-    background-color: $red;
+    @include linear-gradient($red, #CB0101);
 }
 .bg-yellow {
-    background-color: $yellow;
+    @include linear-gradient($yellow, #DB7801);    
+}
+.bg-purple {
+    @include linear-gradient($purple, #24051E);
 }
 .SubjectPageHeadings {
     position: absolute;

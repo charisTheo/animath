@@ -47,16 +47,34 @@ section {
   vertical-align: middle; }
 
 .bg-blue {
-  background-color: #04756F; }
+  background-image: linear-gradient(180deg, #04756F, #016965 90%);
+  -ms-background-image: linear-gradient(180deg, #04756F, #016965 90%);
+  -webkit-background-image: linear-gradient(180deg, #04756F, #016965 90%);
+  -moz-background-image: linear-gradient(180deg, #04756F, #016965 90%); }
 
 .bg-orange {
-  background-color: #FF2D00; }
+  background-image: linear-gradient(180deg, #FF2D00, #DA2902 90%);
+  -ms-background-image: linear-gradient(180deg, #FF2D00, #DA2902 90%);
+  -webkit-background-image: linear-gradient(180deg, #FF2D00, #DA2902 90%);
+  -moz-background-image: linear-gradient(180deg, #FF2D00, #DA2902 90%); }
 
 .bg-red {
-  background-color: #D90000; }
+  background-image: linear-gradient(180deg, #D90000, #CB0101 90%);
+  -ms-background-image: linear-gradient(180deg, #D90000, #CB0101 90%);
+  -webkit-background-image: linear-gradient(180deg, #D90000, #CB0101 90%);
+  -moz-background-image: linear-gradient(180deg, #D90000, #CB0101 90%); }
 
 .bg-yellow {
-  background-color: #FF8C00; }
+  background-image: linear-gradient(180deg, #FF8C00, #DB7801 90%);
+  -ms-background-image: linear-gradient(180deg, #FF8C00, #DB7801 90%);
+  -webkit-background-image: linear-gradient(180deg, #FF8C00, #DB7801 90%);
+  -moz-background-image: linear-gradient(180deg, #FF8C00, #DB7801 90%); }
+
+.bg-purple {
+  background-image: linear-gradient(180deg, #2E0927, #24051E 90%);
+  -ms-background-image: linear-gradient(180deg, #2E0927, #24051E 90%);
+  -webkit-background-image: linear-gradient(180deg, #2E0927, #24051E 90%);
+  -moz-background-image: linear-gradient(180deg, #2E0927, #24051E 90%); }
 
 .SubjectPageHeadings, .page-title, .homeArrowButton {
   position: absolute;
@@ -175,7 +193,7 @@ section#home {
     opacity: 0.7;
     color: #FF8C00;
     text-decoration: none;
-    background-color: #6ecc27; }
+    background-color: #6c0d91; }
     section#home a.subject:hover, section#home a.subject:focus {
       text-decoration: none;
       opacity: 1;
@@ -227,14 +245,16 @@ section.subject-section {
       line-height: 36px;
       font-size: 1.5em; }
       section.subject-section .content .description span {
-        color: #D90000;
         font-weight: bolder;
         display: inline-block; }
     section.subject-section .content hr {
-      border: 1px solid red;
       border-radius: 10px;
       margin: 30px auto;
       width: 0; }
+  section.subject-section[id^="seq-example"] span {
+    color: #D90000; }
+  section.subject-section[id^="seq-example"] hr {
+    border: 1px solid #D90000; }
   section.subject-section#seq-example-1 #example1 {
     opacity: 0; }
   section.subject-section#seq-example-2 .box {
@@ -288,6 +308,25 @@ section.subject-section {
       section.subject-section#seq-example-5 .content #example5-pin #convergent-headings {
         float: right;
         text-align: right; }
+  section.subject-section[id^="lim-example"] span {
+    color: #04756F; }
+  section.subject-section[id^="lim-example"] hr {
+    border: 1px solid #04756F; }
+  section.subject-section#lim-example-1 sup, section.subject-section#lim-example-1 sub {
+    color: #04756F;
+    font-weight: bolder; }
+  section.subject-section#lim-example-2 {
+    padding: 0; }
+    section.subject-section#lim-example-2 #example2 {
+      position: relative;
+      padding: 20px 10px; }
+      section.subject-section#lim-example-2 #example2 svg {
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 0; }
+    section.subject-section#lim-example-2 > svg {
+      position: absolute; }
 
 #scrollReminder {
   position: absolute;

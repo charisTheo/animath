@@ -68,16 +68,22 @@ section.subject-section {
             line-height: 36px;
             font-size: 1.5em;
             span {
-                color: $red;
                 font-weight: bolder;
                 display: inline-block;
             }
         }
         hr {
-            border: 1px solid red;
             border-radius: 10px;
             margin: 30px auto;
             width: 0;
+        }
+    }
+    &[id^="seq-example"] {
+        span {
+            color: $red;            
+        }
+        hr {
+            border: 1px solid $red;            
         }
     }
     &#seq-example-1 {
@@ -150,6 +156,36 @@ section.subject-section {
                     text-align: right;
                 }
             }
+        }
+    }
+    &[id^="lim-example"] {
+        span {
+            color: $blue;
+        }
+        hr {
+            border: 1px solid $blue;            
+        }
+    }
+    &#lim-example-1 {
+        sup, sub {
+            color: $blue;
+            font-weight: bolder;            
+        }
+    }
+    &#lim-example-2 {
+        padding: 0; //overflow width fix
+        #example2 {
+            position: relative;
+            padding: 20px 10px;
+            svg {
+                width: 100%;
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+        }
+        > svg {
+            position: absolute;            
         }
     }
 }

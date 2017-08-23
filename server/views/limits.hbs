@@ -2,9 +2,11 @@
 <html>
 
 <head>
+    <script src="js/ScrollMagic.js"></script>
     {{> meta}} {{> links}}
     <title>Sequences</title>
-    {{!-- <script src="js/subjects/limits.js"></script> --}}
+    <script src="js/subjects/limits.js"></script>
+    
 </head>
 
 <body>
@@ -24,10 +26,54 @@
             <section id="lim-example-1" class="subject-section">
                 <div class="content middle-vertical-align">
                     <h4 id="example1">
-                        <span>Limits</span>
+                        <span><strong>c</strong><sub>n</sub></span> = { <span>1</span>,
+                        <sup>1</sup>&frasl;<sub>2</sub>,
+                        <sup>1</sup>&frasl;<sub>4</sub>,
+                        <sup>1</sup>&frasl;<sub>8</sub>,
+                        <sup>1</sup>&frasl;<sub>16</sub>, …}
                     </h4>
                     <h4 class="description" id="example1-description">
+                        Any term of <span><strong>c</strong><sub>n</sub></span> has a difference <span>ε</span> from its limit <span>L</span>.
+                    </h4>
+                </div>
+            </section>
 
+            <section id="lim-example-2" class="subject-section">
+                <div class="content middle-vertical-align">
+                    <h4 id="example2">
+                        <strong>c</strong><sub>n</sub> = { 1,
+                        <sup>1</sup>&frasl;<sub>2</sub>,
+                        <sup>1</sup>&frasl;<sub>4</sub>,
+                        <sup>1</sup>&frasl;<sub>8</sub>,
+                        <sup>1</sup>&frasl;<sub>16</sub>, …}
+
+                        <svg>
+                            <rect id="example2-frame" stroke="#FF8C00" stroke-width="3" fill="transparent"></rect>
+                        </svg>
+                    </h4>
+                    <h4 class="description" id="example2-description">
+                        meaning that the <span>distance</span> between the <span>sequence</span> and its <span>limit</span> will <span>always</span> be present 
+                    </h4>
+
+                    <svg id="distanceSVG"> 
+                        <line class="bound" x1="2" y1="0" x2="2" y2="80" stroke="#2F343B" stroke-width="5" stroke-linecap="round"/>
+                        <rect x="3" y="15" height="50" id="distanceRect" fill="#04756F"></rect>
+                        <line id="distanceRect-line" x1="3" y1="10" x2="3" y2="70" stroke="#D90000" stroke-width="3" stroke-linecap="round"/>
+                        <line class="bound" x1="240" y1="0" x2="240" y2="80" stroke="#2F343B" stroke-width="5" stroke-linecap="round"/>
+                    </svg>
+                </div>
+            </section>
+
+            <section id="lim-example-3" class="subject-section">
+                <div class="content middle-vertical-align">
+                    <h4 id="example3">
+                        <strong>c</strong><sub>n</sub> = { 1,
+                        <sup>1</sup>&frasl;<sub>2</sub>,
+                        <sup>1</sup>&frasl;<sub>4</sub>,
+                        <sup>1</sup>&frasl;<sub>8</sub>,
+                        <sup>1</sup>&frasl;<sub>16</sub>, …}
+                    </h4>
+                    <h4 class="description" id="example3-description">
                     </h4>
                 </div>
             </section>
