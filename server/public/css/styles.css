@@ -202,7 +202,7 @@ section#home {
     opacity: 0.7;
     color: #FF8C00;
     text-decoration: none;
-    background-color: #923a08; }
+    background-color: #2197ef; }
     section#home a.subject:hover, section#home a.subject:focus {
       text-decoration: none;
       opacity: 1;
@@ -328,14 +328,27 @@ section.subject-section {
     padding: 0; }
     section.subject-section#lim-example-2 #example2 {
       position: relative;
-      padding: 20px 10px; }
+      padding: 20px 10px;
+      max-width: 50%;
+      margin: 10px auto; }
       section.subject-section#lim-example-2 #example2 svg {
         width: 100%;
         position: absolute;
         left: 0;
         top: 0; }
-    section.subject-section#lim-example-2 > svg {
+    section.subject-section#lim-example-2 .content > svg {
       position: absolute; }
+    section.subject-section#lim-example-2 #arrowSVG {
+      top: 0;
+      right: 0;
+      transform: rotate(-90deg) scale(0.65); }
+    section.subject-section#lim-example-2 #example2-arrow-ex {
+      color: #04756F;
+      position: absolute;
+      text-align: right;
+      right: 0;
+      padding-left: 45%;
+      padding-right: 5%; }
 
 #scrollReminder {
   position: absolute;
