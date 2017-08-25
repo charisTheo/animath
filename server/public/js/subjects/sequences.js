@@ -1,4 +1,3 @@
-var idleTime = 0;
 $(document).ready(()=>{
     //#example1
     var controller = new ScrollMagic.Controller();

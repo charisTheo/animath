@@ -23,8 +23,19 @@ $(document).ready(function() {
         height: `${frameHeight}px` 
     });
     configSVG($frame);
-    $('#distanceSVG').hide();
-    
+    $('#distanceSVG')
+        .width('100%')
+        .css('padding', '20%')
+        .hide();
+    function checkDistance() {
+        //show distance covered in 2 d.p. 
+        sequenceTerm.textContent = this.progress().toFixed(2);
+    };
+    function scaleDistance() {
+        tween2.add(TweenMax.to('#distanceSVG', 1, {scale: 3, ease: Linear.easeOut}));
+        tween2.removePause();
+    }
+
     var tween2 = new TimelineMax();
     tween2
         .to('rect#example2-frame', 1, {strokeDashoffset: 0}, 0)
@@ -32,12 +43,15 @@ $(document).ready(function() {
                 scale: 0.7,
                 top: '-20vh',
                 onComplete: function(){
-                    $('#distanceSVG').toggle('pulsate', 'slow');
+                    if (!$('#distanceSVG').is(':visible')) {
+                        $('#distanceSVG').show('pulsate', 'slow');
+                    }
                 }
             }, 1)
         .add('end', 2)
-        .to('#distanceRect', 3, {width: 200, left: '10vw', ease: Linear.easeNone}, 'end')
-        .to('#distanceRect-line', 3, {x: 200, ease: Linear.easeNone}, 'end');
+        .to('#distanceRect', 3, {width: 237, left: '10vw', ease: Linear.easeNone}, 'end')
+        .staggerTo('.distance', 3, {x: 235, ease: Linear.easeNone, onUpdate: checkDistance}, 0, 'end')
+        .addPause(5, scaleDistance)
 
     var scene2 = new ScrollMagic.Scene({triggerElement: '#lim-example-2', duration: '300%'})
         .setTween(tween2)
