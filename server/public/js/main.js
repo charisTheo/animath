@@ -1,7 +1,8 @@
 $(document).ready(function() {
     $(window).resize(() => false);
     $(document).resize(() => false);
-
+    $('.page-loader').fadeOut('slow');
+    
     $('<div id="nav-blob"></div>').css({
         width: 0,
         height: '2px',

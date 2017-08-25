@@ -6,7 +6,7 @@
     {{> meta}} {{> links}}
     <title>Sequences</title>
     <script src="js/subjects/limits.js"></script>
-    
+
 </head>
 
 <body>
@@ -15,10 +15,12 @@
         <a class="homeArrowButton" href="/"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
         <h2 class="page-title">Limits</h2>
         <main>
-            <section id="intro" class="subject-section">
+            <section id="lim-intro" class="subject-section">
                 <div class="content middle-vertical-align">
                     <h4 id="intro-description" class="description">
-                        For a sequence <span>a<sub>n</sub></span> to have a limit <span>L</span>, means it's distance from the limit can be <span>as less</span> as we please, so that <span>|a<sub>n</sub> - L|</span> tends to <span>0</span>.                        
+                        For a sequence <span>a<sub>n</sub></span> to have a limit <span>L</span>, means it's distance from
+                        the limit can be <span>as less</span> as we please, so that <span>|a<sub>n</sub> - L|</span> tends
+                        to <span>0</span>.
                     </h4>
                 </div>
             </section>
@@ -33,7 +35,8 @@
                         <sup>1</sup>&frasl;<sub>16</sub>, …}
                     </h4>
                     <h4 class="description" id="example1-description">
-                        Any term of <span><strong>c</strong><sub>n</sub></span> has a difference <span>ε</span> from its limit <span>L</span>.
+                        Any term of <span><strong>c</strong><sub>n</sub></span> has a difference <span>ε</span> from its
+                        limit <span>L</span>.
                     </h4>
                 </div>
             </section>
@@ -41,25 +44,34 @@
             <section id="lim-example-2" class="subject-section">
                 <div class="content middle-vertical-align">
                     <h4 id="example2">
-                        <strong>c</strong><sub>n</sub> = { 1,
+                        <strong>c</strong><sub>n</sub> = {
                         <sup>1</sup>&frasl;<sub>2</sub>,
-                        <sup>1</sup>&frasl;<sub>4</sub>,
-                        <sup>1</sup>&frasl;<sub>8</sub>,
-                        <sup>1</sup>&frasl;<sub>16</sub>, …}
+                        <sup>2</sup>&frasl;<sub>3</sub>,
+                        <sup>3</sup>&frasl;<sub>4</sub>,
+                        <sup>4</sup>&frasl;<sub>5</sub>, …}
 
                         <svg>
                             <rect id="example2-frame" stroke="#FF8C00" stroke-width="3" fill="transparent"></rect>
                         </svg>
                     </h4>
                     <h4 class="description" id="example2-description">
-                        meaning that the <span>distance</span> between the <span>sequence</span> and its <span>limit</span> will <span>always</span> be present 
+                        meaning that the <span>distance</span> between the <span>sequence</span> and its <span>limit</span>                        will <span>always</span> be present
                     </h4>
 
-                    <svg id="distanceSVG"> 
-                        <line class="bound" x1="2" y1="0" x2="2" y2="80" stroke="#2F343B" stroke-width="5" stroke-linecap="round"/>
+                    <svg id="distanceSVG">
+                        <g stroke="#2F343B" stroke-width="3" stroke-linecap="round">
+                            <line class="bound" x1="2" y1="0" x2="2" y2="80" />
+                            <text x="-2" y="100">0</text>
+                        </g>
                         <rect x="3" y="15" height="50" id="distanceRect" fill="#04756F"></rect>
-                        <line id="distanceRect-line" x1="3" y1="10" x2="3" y2="70" stroke="#D90000" stroke-width="3" stroke-linecap="round"/>
-                        <line class="bound" x1="240" y1="0" x2="240" y2="80" stroke="#2F343B" stroke-width="5" stroke-linecap="round"/>
+                        <g stroke="#FF8C00" stroke-width="1.8" stroke-linecap="round">
+                            <line class="distance" x1="5" y1="10" x2="5" y2="70" />
+                            <text class="distance" x="-5" y="100" id="sequenceTerm"></text>
+                        </g>
+                        <g stroke="#2F343B" stroke-width="3" stroke-linecap="round">
+                            <line class="bound" x1="240" y1="0" x2="240" y2="80"/>
+                            <text x="240" y="100">1</text>
+                        </g>
                     </svg>
                 </div>
             </section>
@@ -82,6 +94,7 @@
         {{> scrollReminder}}
     </div>
     {{!-- end of container --}}
+    <div class="page-loader"></div>
 </body>
 
 </html>

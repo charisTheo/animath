@@ -120,16 +120,15 @@ h5,
 h6 {
     @extend .heading-font;
 }
-// .page-loader {
-//     position: fixed;
-//     top: 0;
-//     left: 0;
-//     z-index: 9999;
-//     width: 100vw;
-//     height: 100vh;
-//     background: url('../img/svg/bars.svg') 50% 50% no-repeat $purple;
-// }
-
+.page-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    width: 100vw;
+    height: 100vh;
+    background: url('../img/circles.svg') 50% 50% no-repeat $orange;
+}
 .heading-font {
     font-family: 'Comfortaa', Helvetica, sans-serif;
     font-weight: bold;

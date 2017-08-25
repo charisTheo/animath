@@ -78,7 +78,7 @@ section.subject-section {
             width: 0;
         }
     }
-    &[id^="seq-example"] {
+    &[id^="seq-"] {
         span {
             color: $red;            
         }
@@ -158,7 +158,7 @@ section.subject-section {
             }
         }
     }
-    &[id^="lim-example"] {
+    &[id^="lim-"] {
         span {
             color: $blue;
         }

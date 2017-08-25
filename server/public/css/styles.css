@@ -53,10 +53,10 @@ section {
   -moz-background-image: linear-gradient(180deg, #04756F, #016965 90%); }
 
 .bg-orange {
-  background-image: linear-gradient(180deg, #FF2D00, #DA2902 90%);
-  -ms-background-image: linear-gradient(180deg, #FF2D00, #DA2902 90%);
-  -webkit-background-image: linear-gradient(180deg, #FF2D00, #DA2902 90%);
-  -moz-background-image: linear-gradient(180deg, #FF2D00, #DA2902 90%); }
+  background-image: linear-gradient(180deg, #F1451F, #DA2902 90%);
+  -ms-background-image: linear-gradient(180deg, #F1451F, #DA2902 90%);
+  -webkit-background-image: linear-gradient(180deg, #F1451F, #DA2902 90%);
+  -moz-background-image: linear-gradient(180deg, #F1451F, #DA2902 90%); }
 
 .bg-red {
   background-image: linear-gradient(180deg, #D90000, #CB0101 90%);
@@ -119,6 +119,15 @@ a:-webkit-any-link {
   -moz-hyperlinktext: inherit;
   -moz-visitedhyperlinktext: inherit;
   -moz-activehyperlinktext: inherit; }
+
+.page-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100vw;
+  height: 100vh;
+  background: url("../img/circles.svg") 50% 50% no-repeat #F1451F; }
 
 .heading-font, h1,
 h2,
@@ -193,7 +202,7 @@ section#home {
     opacity: 0.7;
     color: #FF8C00;
     text-decoration: none;
-    background-color: #6c0d91; }
+    background-color: #923a08; }
     section#home a.subject:hover, section#home a.subject:focus {
       text-decoration: none;
       opacity: 1;
@@ -251,9 +260,9 @@ section.subject-section {
       border-radius: 10px;
       margin: 30px auto;
       width: 0; }
-  section.subject-section[id^="seq-example"] span {
+  section.subject-section[id^="seq-"] span {
     color: #D90000; }
-  section.subject-section[id^="seq-example"] hr {
+  section.subject-section[id^="seq-"] hr {
     border: 1px solid #D90000; }
   section.subject-section#seq-example-1 #example1 {
     opacity: 0; }
@@ -289,7 +298,7 @@ section.subject-section {
         margin: 25px 0; }
         section.subject-section#seq-example-5 .content #example5-pin .convergent-heading:not(:first-child),
         section.subject-section#seq-example-5 .content #example5-pin .divergent-heading:not(:first-child) {
-          color: #FF2D00;
+          color: #F1451F;
           font-size: small; }
       section.subject-section#seq-example-5 .content #example5-pin #divergent,
       section.subject-section#seq-example-5 .content #example5-pin #convergent {
@@ -308,9 +317,9 @@ section.subject-section {
       section.subject-section#seq-example-5 .content #example5-pin #convergent-headings {
         float: right;
         text-align: right; }
-  section.subject-section[id^="lim-example"] span {
+  section.subject-section[id^="lim-"] span {
     color: #04756F; }
-  section.subject-section[id^="lim-example"] hr {
+  section.subject-section[id^="lim-"] hr {
     border: 1px solid #04756F; }
   section.subject-section#lim-example-1 sup, section.subject-section#lim-example-1 sub {
     color: #04756F;

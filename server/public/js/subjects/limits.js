@@ -23,8 +23,19 @@ $(document).ready(function() {
         height: `${frameHeight}px` 
     });
     configSVG($frame);
-    $('#distanceSVG').hide();
-    
+    $('#distanceSVG')
+        .width('100%')
+        .css('padding', '20%')
+        .hide();
+    function checkDistance() {
+        //show distance covered in 3 d.p. 
+        if (this.progress().toFixed(3) > 0.973) {
+            sequenceTerm.textContent = 0.999;
+        } else {
+            sequenceTerm.textContent = this.progress().toFixed(3);
+        }
+    };
+
     var tween2 = new TimelineMax();
     tween2
         .to('rect#example2-frame', 1, {strokeDashoffset: 0}, 0)
@@ -32,13 +43,34 @@ $(document).ready(function() {
                 scale: 0.7,
                 top: '-20vh',
                 onComplete: function(){
-                    $('#distanceSVG').toggle('pulsate', 'slow');
+                    if (!$('#distanceSVG').is(':visible')) {
+                        $('#distanceSVG').show('pulsate', 'slow');
+                    }
                 }
             }, 1)
+        .add('scale', 4.4)
         .add('end', 2)
-        .to('#distanceRect', 3, {width: 200, left: '10vw', ease: Linear.easeNone}, 'end')
-        .to('#distanceRect-line', 3, {x: 200, ease: Linear.easeNone}, 'end');
-
+        .to('#distanceRect', 4, {
+            width: 232, 
+            left: '10vw', 
+            ease: Linear.easeNone
+        }, 'end')
+        .staggerTo('.distance', 4, {
+            x: 230,
+            ease: Linear.easeNone,
+            onUpdate: checkDistance
+        }, 0, 'end')
+        .to('#sequenceTerm', 0.5, {
+            scale: 0.5,
+            transformOrigin: '0 50%',
+            ease: Linear.easeOut
+        }, 'scale')
+        .to('#distanceSVG', 0.5, {
+            scale: 2.5,
+            transformOrigin: '100% 50%',
+            ease: Linear.easeOut
+        }, 'scale'); 
+        
     var scene2 = new ScrollMagic.Scene({triggerElement: '#lim-example-2', duration: '300%'})
         .setTween(tween2)
         .setPin('#lim-example-2', {pushFollowers: true})
