@@ -76,6 +76,12 @@ section {
   -webkit-background-image: linear-gradient(180deg, #2E0927, #24051E 90%);
   -moz-background-image: linear-gradient(180deg, #2E0927, #24051E 90%); }
 
+.bg-green {
+  background-image: linear-gradient(180deg, #9FF226, #73B613 90%);
+  -ms-background-image: linear-gradient(180deg, #9FF226, #73B613 90%);
+  -webkit-background-image: linear-gradient(180deg, #9FF226, #73B613 90%);
+  -moz-background-image: linear-gradient(180deg, #9FF226, #73B613 90%); }
+
 .SubjectPageHeadings, .page-title, .homeArrowButton {
   position: absolute;
   top: 0;
@@ -202,11 +208,12 @@ section#home {
     opacity: 0.7;
     color: #FF8C00;
     text-decoration: none;
-    background-color: #2197ef; }
+    background-color: #7094ee; }
     section#home a.subject:hover, section#home a.subject:focus {
       text-decoration: none;
       opacity: 1;
-      padding: 20px; }
+      padding: 20px;
+      max-width: 70px; }
       section#home a.subject:hover .subject-title, section#home a.subject:focus .subject-title {
         font-size: 20px; }
       section#home a.subject:hover .subject-description, section#home a.subject:focus .subject-description {
@@ -329,7 +336,7 @@ section.subject-section {
     section.subject-section#lim-example-2 #example2 {
       position: relative;
       padding: 20px 10px;
-      max-width: 50%;
+      max-width: 75%;
       margin: 10px auto; }
       section.subject-section#lim-example-2 #example2 svg {
         width: 100%;
@@ -337,18 +344,8 @@ section.subject-section {
         left: 0;
         top: 0; }
     section.subject-section#lim-example-2 .content > svg {
-      position: absolute; }
-    section.subject-section#lim-example-2 #arrowSVG {
-      top: 0;
-      right: 0;
-      transform: rotate(-90deg) scale(0.65); }
-    section.subject-section#lim-example-2 #example2-arrow-ex {
-      color: #04756F;
       position: absolute;
-      text-align: right;
-      right: 0;
-      padding-left: 45%;
-      padding-right: 5%; }
+      overflow: visible; }
 
 #scrollReminder {
   position: absolute;

@@ -63,6 +63,9 @@ section {
 .bg-purple {
     @include linear-gradient($purple, #24051E);
 }
+.bg-green {
+    @include linear-gradient(#9FF226, #73B613);    
+}
 .SubjectPageHeadings {
     position: absolute;
     top: 0;

@@ -16,18 +16,14 @@ $(document).ready(function() {
 
     //example2
     var $frame = $('rect#example2-frame')
-        $arrow = $('path.arrow')
         frameWidth = $('#example2').innerWidth()
         frameHeight = $('#example2').innerHeight();
     $frame.css({
         width: `${frameWidth}px`,
         height: `${frameHeight}px` 
     });
-    configSVG($arrow);
     configSVG($frame);
     $('#distanceSVG').hide();
-    $('#arrowSVG').hide();
-    $('#example2-arrow-ex').hide();
 
     function checkDistance() {
         //show distance covered in 3 d.p. 
@@ -45,7 +41,7 @@ $(document).ready(function() {
         .to('rect#example2-frame', 1, {strokeDashoffset: 0}, 0)
         .to('#example2', 0.5, {
                 scale: 0.7,
-                top: '-10vh',
+                top: '-40vh',
                 onComplete: function(){
                     if (!$('#distanceSVG').is(':visible')) {
                         $('#distanceSVG').show('pulsate', 'slow');
@@ -72,7 +68,13 @@ $(document).ready(function() {
             ease: Linear.easeOut,
             onUpdate: checkDistance,
             onComplete: function(){
-                $('#arrowSVG').show('fade');
+                $('#arrow-ex').attr('y', $('#distanceSVG').height() - 20);
+                $('tspan').first().attr('y', $('#distanceSVG').height());
+                $('tspan').last().attr('y', $('#distanceSVG').height() + 20);
+                $('tspan').attr('x', 180);
+                $('#arrow-ex').attr('x', 180);
+                $('line#arrow').attr('x2', 200);
+                $('line#arrow').attr('y2', $('#distanceSVG').height() - 40);
             }
         }, 0, 'end')
         .to('#sequenceTerm', 0.5, {
@@ -85,15 +87,8 @@ $(document).ready(function() {
             transformOrigin: '80% 50%',
             ease: Linear.easeOut
         }, 'scale')
-        .staggerTo('path.arrow', 1, {
-            strokeDashoffset: 0, 
-            ease: Linear.easeOut,
-            onComplete: function(){
-                if (!$('#example2-arrow-ex').is(':visible')) {
-                    $('#example2-arrow-ex').show('fade', 'slow');
-                }
-            }
-        }, 0.5, 'end+=2');
+        .fromTo('line#arrow', 0.5, {opacity: 0, scale: 2}, {opacity: 1, scale: 1, ease: Linear.easeOut})
+        .fromTo('#arrow-ex', 1, {opacity: 0}, {opacity: 1, scale: .5, ease: Linear.easeOut});
         
     var scene2 = new ScrollMagic.Scene({triggerElement: '#lim-example-2', duration: '400%'})
         .setTween(tween2)
