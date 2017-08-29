@@ -213,7 +213,7 @@ section#home {
     opacity: 0.7;
     color: #FF8C00;
     text-decoration: none;
-    background-color: #a1e6c0; }
+    background-color: #4aca75; }
     section#home a.subject:hover, section#home a.subject:focus {
       text-decoration: none;
       opacity: 1;
@@ -353,7 +353,7 @@ section.subject-section {
         position: absolute;
         left: 0;
         top: 0; }
-    section.subject-section#lim-example-2 > svg {
+    section.subject-section#lim-example-2 svg#sequenceSVG {
       width: 100%;
       left: 0;
       top: 0;

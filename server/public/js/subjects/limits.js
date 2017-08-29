@@ -16,18 +16,26 @@ $(document).ready(function() {
                 term.textContent = "4/5";
                 $('#sequenceTerm').text("4/5");
                 $('#sequenceRect').width(180);
+                // $('.termDistance').animate({webkitTransform: 'translate(180px, 0)'});
             } else if (distanceCovered > 3/4) {
                 term.textContent = "3/4";
                 $('#sequenceTerm').text("3/4");
                 $('#sequenceRect').width(168.75);
+                // $('.termDistance')[0].css('x', 168.75);
             } else if (distanceCovered > 2/3) {
                 term.textContent = "2/3";
                 $('#sequenceTerm').text("2/3");
                 $('#sequenceRect').width(150);
-            } else {
+                // $('.termDistance')[0].css('x', 150);
+            } else if (distanceCovered > 1/2) {
                 term.textContent = "1/2";
                 $('#sequenceTerm').text("1/2");
                 $('#sequenceRect').width(112.5);
+                // $('.termDistance')[0].css('x', 112.5);
+            } else {
+                term.textContent = "";
+                $('#sequenceTerm').text("");
+                $('#sequenceRect').width(0);
             }
         }
     };
@@ -117,13 +125,6 @@ $(document).ready(function() {
             }, 1)
         // .add('scale', 4.4)
         .add('end', 2)
-        // .to('#sequenceRect', 5, {
-        //     width: 222,
-        //     ease: SteppedEase.config(1),
-        //     onUpdate: function(){
-        //         if (this.progress() >= 0.968) false;
-        //     },
-        // }, 1)
         .to('#sequenceLine', 4, {
             scaleX: 0.025,
             transformOrigin: '100% top', 
