@@ -198,6 +198,10 @@ input.form-group-item {
   width: 100%;
   clear: both; }
 
+.caption {
+  color: #2F343B;
+  font-size: small; }
+
 section#home {
   display: flex;
   flex-direction: row;
@@ -213,7 +217,7 @@ section#home {
     opacity: 0.7;
     color: #FF8C00;
     text-decoration: none;
-    background-color: #b10642; }
+    background-color: #7a6b53; }
     section#home a.subject:hover, section#home a.subject:focus {
       text-decoration: none;
       opacity: 1;
@@ -349,6 +353,8 @@ section.subject-section {
       padding: 20px 10px;
       max-width: 75%;
       margin: 10px auto; }
+      section.subject-section#lim-example-2 #example2 div.fraction {
+        display: inline-block; }
       section.subject-section#lim-example-2 #example2 > svg {
         position: absolute;
         left: 0;
@@ -418,3 +424,12 @@ span.superscript {
   position: relative;
   bottom: 0.5em;
   font-size: 0.8em; }
+
+div.fraction {
+  display: inline-block;
+  vertical-align: middle; }
+  div.fraction .denominator, div.fraction .multiplier {
+    display: block;
+    padding: 5px; }
+  div.fraction .multiplier {
+    border-bottom: 1px solid; }

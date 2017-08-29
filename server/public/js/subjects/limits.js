@@ -83,7 +83,8 @@ $(document).ready(function() {
     });
     configSVG($frame);
     $('#sequenceSVG').hide();
-
+    $('#example2-params').hide();
+    
     var fractionMultiplier = 1;
     var fractionDenominator = 2;
     var oldTermCovered = 0;
@@ -92,7 +93,6 @@ $(document).ready(function() {
         if (termCovered >= 0.968) {
             return false;
         }
-
         //it is going backwards
         if (oldTermCovered > termCovered) {
             if (termCovered < fractionMultiplier/fractionDenominator) {
@@ -123,8 +123,10 @@ $(document).ready(function() {
                 top: '-20vh',
                 onComplete: function(){
                     if (!$('#sequenceSVG').is(':visible')) {
+                        $('#example2-params').show('pulsate');
                         $('#sequenceSVG').show('pulsate', 'slow');
                     }
+                    
                 }
             }, 1)
         .add('end', 2)

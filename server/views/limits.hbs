@@ -65,9 +65,9 @@
                         </g>
                         <path id="arrow" stroke="#D90000" stroke-linecap="round" stroke-width="8" fill="none" stroke-linejoin="round" d="m250.88 207.51c557.4 25.04 195.77 378.57-1.4286 485.71v-46.429l5 48.571h35.714"/>
                         {{!-- <line class="arrow" stroke="#D90000" stroke-width="1.5" id="arrow" x1="235" y1="40" /> --}}
-                        <text fill="#2E0927" id="arrow-ex">There is always going to be
-                            <tspan x="100" dy="15"> some difference between </tspan>
-                            <tspan x="100" dy="15">the sequence and its limit!</tspan>
+                        <text fill="#2E0927" id="arrow-ex">Some distance between the
+                            <tspan x="100" dy="15">the sequence and its limit</tspan>
+                            <tspan x="100" dy="15">will always be present!</tspan>
                         </text>
                     </svg>
                 </div>
@@ -76,18 +76,29 @@
             <section id="lim-example-2" class="subject-section">
                 <div class="content middle-vertical-align">
                     <h4 id="example2">
-                        <strong>c</strong><sub>n</sub> = {
-                        <sup>1</sup>&frasl;<sub>2</sub>,
-                        <sup>2</sup>&frasl;<sub>3</sub>,
-                        <sup>3</sup>&frasl;<sub>4</sub>,
-                        <sup>4</sup>&frasl;<sub>5</sub>, …}
-
+                        <strong>c</strong><sub>n</sub> = 
+                            <div class="fraction">
+                                <span class="multiplier">n</span><span class="denominator">n + 1</span>
+                            </div>
                         <svg>
                             <rect id="example2-frame" stroke="#FF8C00" stroke-width="3" fill="transparent"></rect>
                         </svg>
                     </h4>
-                    <h4 class="description" id="example2-description">
-                        meaning that the <span>distance</span> between the <span>sequence</span> and its <span>limit</span>                        will <span>always</span> be present
+                    <h4 class="description" id="example2-params">
+                        <label for="example2" class="caption">
+                            ex: c<sub>n</sub> = {
+                            <sup>1</sup>&frasl;<sub>2</sub>,
+                            <sup>2</sup>&frasl;<sub>3</sub>,
+                            <sup>3</sup>&frasl;<sub>4</sub>,
+                            <sup>4</sup>&frasl;<sub>5</sub>, …}
+                        </label>
+
+                        <div class="params">
+                            
+                        </div>
+                        <div class="params">
+
+                        </div>
                     </h4>
 
                     <svg id="sequenceSVG">

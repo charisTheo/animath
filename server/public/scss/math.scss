@@ -9,3 +9,16 @@ span.superscript {
     bottom: 0.5em;
     font-size: 0.8em;
 }
+
+div.fraction {
+    display: inline-block;
+    vertical-align: middle;
+    .denominator {
+        display: block;
+        padding: 5px;
+    }
+    .multiplier {
+        @extend .denominator;
+        border-bottom: 1px solid;    
+    }
+}
