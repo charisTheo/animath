@@ -192,6 +192,20 @@ section.subject-section {
             overflow: visible;        
         }
     }
+    &#lim-example-3 {
+        #example3 {
+            transform: scaleY(3);
+            opacity: 0;
+        }
+        #example3-description {
+            div.lim {
+                display: block;
+            }
+            span.lim-stagger {
+                vertical-align: middle;
+            }
+        }
+    }
 }
 
 #scrollReminder {

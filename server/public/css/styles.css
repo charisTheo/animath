@@ -208,7 +208,7 @@ section#home {
     opacity: 0.7;
     color: #FF8C00;
     text-decoration: none;
-    background-color: #7094ee; }
+    background-color: #b7ab69; }
     section#home a.subject:hover, section#home a.subject:focus {
       text-decoration: none;
       opacity: 1;
@@ -346,6 +346,13 @@ section.subject-section {
     section.subject-section#lim-example-2 .content > svg {
       position: absolute;
       overflow: visible; }
+  section.subject-section#lim-example-3 #example3 {
+    transform: scaleY(3);
+    opacity: 0; }
+  section.subject-section#lim-example-3 #example3-description div.lim {
+    display: block; }
+  section.subject-section#lim-example-3 #example3-description span.lim-stagger {
+    vertical-align: middle; }
 
 #scrollReminder {
   position: absolute;

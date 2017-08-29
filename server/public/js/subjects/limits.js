@@ -95,4 +95,22 @@ $(document).ready(function() {
         .setPin('#lim-example-2', {pushFollowers: true})
         .triggerHook('onLeave')
         .addTo(controller);
+
+    //example3
+    $('#example3-description').show();
+    var tween3 = new TimelineMax()
+        .fromTo('#example3-description', 1, {opacity: 0}, {opacity: 1, ease: SlowMo.ease.config(0.7, 0.7, false)})
+        .staggerFromTo('.lim-stagger', 4, {scale: 3}, {scale: 1, ease: Power4.easeOut});
+
+    //add offset
+    var scene3 = new ScrollMagic.Scene({triggerElement: '#lim-example-3', duration: '200%'})
+        .setTween(tween3)
+        .setPin('#lim-example-3', {pushFollowers: true})
+        .triggerHook('onLeave')
+        .addTo(controller);
+
+    var scene3_1 = new ScrollMagic.Scene({triggerElement: '#lim-example-3'})
+        .setTween('#example3', 0.5, {scaleY: 1, opacity: 1})
+        .triggerHook('onLeave')
+        .addTo(controller);
 });
