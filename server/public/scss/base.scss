@@ -144,7 +144,6 @@ h6 {
     letter-spacing: 1px;    
     font-weight: bold;
 }
-
 div.form-group {
     margin: 30px 10px;
     width: 100%;
@@ -184,4 +183,9 @@ input.form-group-item {
             transform-origin: left top;
         }
     }
+}
+.prefix {
+    display: block;
+    width: 100%;
+    clear: both;
 }

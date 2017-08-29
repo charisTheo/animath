@@ -1,12 +1,90 @@
 $(document).ready(function() {
     var controller = new ScrollMagic.Controller();
     
+    function checkDistance() {
+        //show distance covered in 3 d.p. 
+        var distanceCovered = this.progress().toFixed(3);
+        if (distanceCovered >= 0.968) {
+            return false;
+        } else {
+            //example1
+            distanceLeft.textContent = distanceCovered;
+            $('#difference').text(Number(1 - distanceCovered).toFixed(3));
+            
+            //example2
+            if (distanceCovered > 4/5) {
+                term.textContent = "4/5";
+                $('#sequenceTerm').text("4/5");
+                $('#sequenceRect').width(180);
+            } else if (distanceCovered > 3/4) {
+                term.textContent = "3/4";
+                $('#sequenceTerm').text("3/4");
+                $('#sequenceRect').width(168.75);
+            } else if (distanceCovered > 2/3) {
+                term.textContent = "2/3";
+                $('#sequenceTerm').text("2/3");
+                $('#sequenceRect').width(150);
+            } else {
+                term.textContent = "1/2";
+                $('#sequenceTerm').text("1/2");
+                $('#sequenceRect').width(112.5);
+            }
+        }
+    };
+
     //example1
-    $('#example1-description').show(); //bug fix
+    $('#distanceSVG').hide();
+    $('#example1-description').show(); //bug fixes
+    configSVG($('path#arrow'));
+
     var tween1 = new TimelineMax();
     tween1  
         .add(TweenMax.fromTo('#example1', 1, {opacity: 0}, {opacity: 1, scale: 1.3, ease: Bounce.easeOut}))
-        .add(TweenMax.fromTo('#example1-description', 0.7, {scale: 0}, {scale: 1, opacity: 1, ease: Bounce.easeOut}));
+        .add(TweenMax.fromTo('#example1-description', 0.7, {scale: 0}, {
+            scale: 1, 
+            opacity: 1, 
+            ease: Bounce.easeOut
+        }))
+        .staggerTo('#lim-example-1 h4', 1.5, {
+            scale: 0.7,
+            transformOrigin: 'top middle',
+            onComplete: function(){
+                if (!$('#distanceSVG').is(':visible')) {
+                    $('#distanceSVG').show('pulsate', 'slow');
+                }
+            }
+        }, 1)
+        .add('end', 2)
+        .to('#distanceRect', 4, {
+            width: 222, 
+            left: '10vw', 
+            ease: Linear.easeNone,
+            onUpdate: function(){
+                if (this.progress() >= 0.968) false;
+            },
+        }, 'end')
+        .to('#differenceLine', 4, {
+            scaleX: 0.025,
+            svgOrigin: '235 40',
+            ease: Linear.easeNone
+        }, 'end')
+        .staggerTo('.distance', 4, {
+            x: 220,
+            ease: Linear.easeOut,
+            onUpdate: checkDistance,
+            onComplete: function(){
+                $('#arrow-ex').attr('y', $('#distanceSVG').height());
+                $('#arrow-ex').attr('x', 100);
+            }
+        }, 0, 'end')
+        .to('path#arrow', 0.5, {
+            strokeDashoffset: 0,
+            scale: 0.2,
+            svgOrigin: "240 0",
+            ease: Linear.easeOut
+        })
+        .fromTo('#arrow-ex', 1, {opacity: 0}, {opacity: 1, scale: 1, ease: Linear.easeOut});
+    
     var scene1 = new ScrollMagic.Scene({triggerElement: '#lim-example-1', duration: '100%'})
         .setTween(tween1)
         .setPin('#lim-example-1', {pushFollowers: true})
@@ -23,72 +101,39 @@ $(document).ready(function() {
         height: `${frameHeight}px` 
     });
     configSVG($frame);
-    $('#distanceSVG').hide();
-
-    function checkDistance() {
-        //show distance covered in 3 d.p. 
-        var distanceCovered = this.progress().toFixed(3);
-        if (distanceCovered >= 0.968) {
-            return false;
-        } else {
-            sequenceTerm.textContent = distanceCovered;
-            $('#difference').text(Number(1 - distanceCovered).toFixed(3));
-        }
-    };
+    $('#sequenceSVG').hide();
 
     var tween2 = new TimelineMax();
     tween2
         .to('rect#example2-frame', 1, {strokeDashoffset: 0}, 0)
         .to('#example2', 0.5, {
                 scale: 0.7,
-                top: '-40vh',
+                top: '-20vh',
                 onComplete: function(){
-                    if (!$('#distanceSVG').is(':visible')) {
-                        $('#distanceSVG').show('pulsate', 'slow');
+                    if (!$('#sequenceSVG').is(':visible')) {
+                        $('#sequenceSVG').show('pulsate', 'slow');
                     }
                 }
             }, 1)
-        .add('scale', 4.4)
+        // .add('scale', 4.4)
         .add('end', 2)
-        .to('#distanceRect', 4, {
-            width: 222, 
-            left: '10vw', 
-            ease: Linear.easeNone,
-            onUpdate: function(){
-                if (this.progress() >= 0.968) false;
-            },
-        }, 'end')
-        .to('#differenceLine', 4, {
+        // .to('#sequenceRect', 5, {
+        //     width: 222,
+        //     ease: SteppedEase.config(1),
+        //     onUpdate: function(){
+        //         if (this.progress() >= 0.968) false;
+        //     },
+        // }, 1)
+        .to('#sequenceLine', 4, {
             scaleX: 0.025,
             transformOrigin: '100% top', 
             ease: Linear.easeNone
         }, 'end')
-        .staggerTo('.distance', 4, {
+        .staggerTo('.termDistance', 4, {
             x: 220,
             ease: Linear.easeOut,
-            onUpdate: checkDistance,
-            onComplete: function(){
-                $('#arrow-ex').attr('y', $('#distanceSVG').height() - 20);
-                $('tspan').first().attr('y', $('#distanceSVG').height());
-                $('tspan').last().attr('y', $('#distanceSVG').height() + 20);
-                $('tspan').attr('x', 180);
-                $('#arrow-ex').attr('x', 180);
-                $('line#arrow').attr('x2', 200);
-                $('line#arrow').attr('y2', $('#distanceSVG').height() - 40);
-            }
-        }, 0, 'end')
-        .to('#sequenceTerm', 0.5, {
-            scale: 0.5,
-            transformOrigin: '0 50%',
-            ease: Linear.easeOut
-        }, 'scale')
-        .to('#distanceSVG', 0.5, {
-            scale: 2.5,
-            transformOrigin: '80% 50%',
-            ease: Linear.easeOut
-        }, 'scale')
-        .fromTo('line#arrow', 0.5, {opacity: 0, scale: 2}, {opacity: 1, scale: 1, ease: Linear.easeOut})
-        .fromTo('#arrow-ex', 1, {opacity: 0}, {opacity: 1, scale: .5, ease: Linear.easeOut});
+            onUpdate: checkDistance
+        }, 0, 'end');
         
     var scene2 = new ScrollMagic.Scene({triggerElement: '#lim-example-2', duration: '400%'})
         .setTween(tween2)

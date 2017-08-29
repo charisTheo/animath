@@ -193,6 +193,11 @@ input.form-group-item {
       font-size: 10px;
       transform-origin: left top; }
 
+.prefix {
+  display: block;
+  width: 100%;
+  clear: both; }
+
 section#home {
   display: flex;
   flex-direction: row;
@@ -208,7 +213,7 @@ section#home {
     opacity: 0.7;
     color: #FF8C00;
     text-decoration: none;
-    background-color: #b7ab69; }
+    background-color: #a1e6c0; }
     section#home a.subject:hover, section#home a.subject:focus {
       text-decoration: none;
       opacity: 1;
@@ -331,6 +336,12 @@ section.subject-section {
   section.subject-section#lim-example-1 sup, section.subject-section#lim-example-1 sub {
     color: #04756F;
     font-weight: bolder; }
+  section.subject-section#lim-example-1 .content > svg {
+    width: 100%;
+    left: 0;
+    top: 0;
+    margin-top: 50px;
+    overflow: visible; }
   section.subject-section#lim-example-2 {
     padding: 0; }
     section.subject-section#lim-example-2 #example2 {
@@ -338,13 +349,15 @@ section.subject-section {
       padding: 20px 10px;
       max-width: 75%;
       margin: 10px auto; }
-      section.subject-section#lim-example-2 #example2 svg {
-        width: 100%;
+      section.subject-section#lim-example-2 #example2 > svg {
         position: absolute;
         left: 0;
         top: 0; }
-    section.subject-section#lim-example-2 .content > svg {
-      position: absolute;
+    section.subject-section#lim-example-2 > svg {
+      width: 100%;
+      left: 0;
+      top: 0;
+      margin-top: 50px;
       overflow: visible; }
   section.subject-section#lim-example-3 #example3 {
     transform: scaleY(3);

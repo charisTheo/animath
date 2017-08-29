@@ -38,6 +38,38 @@
                         Any term of <span><strong>c</strong><sub>n</sub></span> has a difference <span>ε</span> from its
                         limit <span>L</span>.
                     </h4>
+
+                    <svg id="distanceSVG">
+                        <g stroke="#2F343B">
+                            <line class="bound" x1="2" y1="0" x2="2" y2="80" stroke-width="3" stroke-linecap="round" />
+                            <text x="-2" y="100" stroke-width="1.5">0</text>
+                        </g>
+                        <rect x="3" y="15" height="50" id="distanceRect" fill="#04756F"></rect>
+                        <g stroke="#D90000" stroke-width="1.8" stroke-linecap="round">
+                            <line class="distance" x1="5" y1="10" x2="5" y2="70" />
+                            <text class="distance" x="-40" y="45" id="distanceLeft"></text>
+                        </g>
+                        <g stroke="#2F343B">
+                            <line class="bound" x1="240" y1="0" x2="240" y2="80" stroke-width="3" stroke-linecap="round" />
+                            <text x="240" y="100" stroke-width="1.5">1 (L)</text>
+                        </g>
+                        <g>
+                            {{!-- left bound --}}
+                            <line class="distance" x1="10" y1="30" x2="10" y2="50" stroke="#04756F" stroke-width="1" stroke-linecap="round"/>
+                            {{!-- difference --}}
+                            <text fill="#F1451F" x="150" y="-30">an - L = <tspan dy="-25" dx="10">(ε)</tspan></text>
+                            <text fill="#04756F" x="210" y="-30" id="difference"></text>
+                            <line id="differenceLine" x1="10" y1="40" x2="235" y2="40" stroke="#D90000" stroke-width="1" stroke-linecap="round"/> 
+                            {{!-- right bound --}}
+                            <line x1="235" y1="30" x2="235" y2="50" stroke="#04756F" stroke-width="1" stroke-linecap="round"/>
+                        </g>
+                        <path id="arrow" stroke="#D90000" stroke-linecap="round" stroke-width="8" fill="none" stroke-linejoin="round" d="m250.88 207.51c557.4 25.04 195.77 378.57-1.4286 485.71v-46.429l5 48.571h35.714"/>
+                        {{!-- <line class="arrow" stroke="#D90000" stroke-width="1.5" id="arrow" x1="235" y1="40" /> --}}
+                        <text fill="#2E0927" id="arrow-ex">There is always going to be
+                            <tspan x="100" dy="15"> some difference between </tspan>
+                            <tspan x="100" dy="15">the sequence and its limit!</tspan>
+                        </text>
+                    </svg>
                 </div>
             </section>
 
@@ -58,15 +90,15 @@
                         meaning that the <span>distance</span> between the <span>sequence</span> and its <span>limit</span>                        will <span>always</span> be present
                     </h4>
 
-                    <svg id="distanceSVG">
+                    <svg id="sequenceSVG">
                         <g stroke="#2F343B">
                             <line class="bound" x1="2" y1="0" x2="2" y2="80" stroke-width="3" stroke-linecap="round" />
                             <text x="-2" y="100" stroke-width="1.5">0</text>
                         </g>
-                        <rect x="3" y="15" height="50" id="distanceRect" fill="#04756F"></rect>
+                        <rect x="3" y="15" height="50" id="sequenceRect" fill="#04756F"></rect>
                         <g stroke="#D90000" stroke-width="1.8" stroke-linecap="round">
-                            <line class="distance" x1="5" y1="10" x2="5" y2="70" />
-                            <text class="distance" x="-5" y="100" id="sequenceTerm"></text>
+                            <line class="termDistance" x1="5" y1="10" x2="5" y2="70" />
+                            <text class="termDistance" x="-40" y="45" id="term"></text>
                         </g>
                         <g stroke="#2F343B">
                             <line class="bound" x1="240" y1="0" x2="240" y2="80" stroke-width="3" stroke-linecap="round" />
@@ -74,20 +106,16 @@
                         </g>
                         <g>
                             {{!-- left bound --}}
-                            <line class="distance" x1="10" y1="30" x2="10" y2="50" stroke="#04756F" stroke-width="1" stroke-linecap="round"/>
-                            {{!-- difference --}}
+                            <line class="termDistance" x1="10" y1="30" x2="10" y2="50" stroke="#04756F" stroke-width="1" stroke-linecap="round"/>
+                            {{!-- term --}}
                             <text fill="#F1451F" x="150" y="-30">an - L =</text>
-                            <text fill="#04756F" x="210" y="-30" id="difference"></text>
-                            <line id="differenceLine" x1="10" y1="40" x2="235" y2="40" stroke="#D90000" stroke-width="1" stroke-linecap="round"/> 
+                            <text fill="#04756F" x="210" y="-30" id="sequenceTerm"></text>
+                            <line id="sequenceLine" x1="10" y1="40" x2="235" y2="40" stroke="#D90000" stroke-width="1" stroke-linecap="round"/> 
                             {{!-- right bound --}}
                             <line x1="235" y1="30" x2="235" y2="50" stroke="#04756F" stroke-width="1" stroke-linecap="round"/>
                         </g>
-                        <line class="arrow" stroke="#D90000" stroke-width="1.5" id="arrow" x1="235" y1="40" />
-                        <text fill="#2E0927" id="arrow-ex">There always going to be
-                            <tspan> some difference between </tspan>
-                            <tspan>the sequence and its limit!</tspan>
-                        </text>
                     </svg>
+                    
                 </div>
             </section>
 
