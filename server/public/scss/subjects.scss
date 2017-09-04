@@ -66,8 +66,12 @@ section.subject-section {
         color: $purple;
         .description {
             word-spacing: 5px;
-            line-height: 36px;
-            font-size: 1.5em;
+            line-height: 46px;
+            font-size: 1.7em;
+            &#intro-description {
+                max-width: 50vw;
+                margin: 20px auto;
+            }
             span {
                 font-weight: bolder;
                 display: inline-block;
@@ -168,15 +172,16 @@ section.subject-section {
         }
     }
     &#lim-example-1 {
+        text-align: center;
+        #example1 {
+            font-size: 1.5em;
+        }
         sup, sub {
             color: $blue;
             font-weight: bolder;            
         }
         .content > svg {
-            width: 100%;
-            left: 0;
-            top: 0;
-            margin-top: 50px;
+            margin: 100px auto;
             overflow: visible;   
         }
     }
@@ -192,15 +197,32 @@ section.subject-section {
             }
             > svg {
                 position: absolute;
+                overflow: visible;
                 left: 0;
                 top: 0;
             }
         }
+        #example2-params {
+            margin-top: 0;
+            div {
+                margin-top: 40px;
+            }
+            input#nthTerm {
+                background-color: transparent;
+                outline: none;
+                border: none;
+                position: absolute;
+                color: $blue;
+                &:active,
+                &:focus {
+                    background-color: transparent;
+                    outline: none;
+                    border: none;
+                }
+            }
+        }
         svg#sequenceSVG {
-            width: 100%;
-            left: 0;
-            top: 0;
-            margin-top: 50px;
+            margin: 50px auto;
             overflow: visible;
         }
     }
@@ -211,9 +233,6 @@ section.subject-section {
             opacity: 0;
         }
         #example3-description {
-            div.lim {
-                display: block;
-            }
             span.lim-stagger {
                 vertical-align: middle;
             }

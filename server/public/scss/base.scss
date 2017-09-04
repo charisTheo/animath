@@ -20,7 +20,7 @@ body,
     width: 5px;
 }
 *::-webkit-scrollbar-track {
-    background-color: grey;
+    background-color: $blue;
 } 
 *::-webkit-scrollbar-thumb {
     background: orangered;
@@ -192,4 +192,8 @@ input.form-group-item {
 .caption {
     color: $grey;
     font-size: small;
+}
+h4.scaleToTop {
+    @include transition-all();
+    @include transform(scale(0.7) top middle);
 }

@@ -15,27 +15,29 @@ $(document).ready(function() {
 
     //example1
     $('#distanceSVG').hide();
-    $('#example1-description').show(); //bug fixes
+    $('#example1-description').show();
     configSVG($('path#arrow'));
+
+    var scaleTween = new TimelineMax();
+    scaleTween.add(TweenMax.staggerFromTo('#lim-example-1 h4', 0.5, {scale: 1}, {
+        scale: 0.7,
+        transformOrigin: 'top middle',
+        ease: Back.easeOut.config(1.7)
+    }, 0.3));
 
     var tween1 = new TimelineMax();
     tween1  
-        .add(TweenMax.fromTo('#example1', 1, {opacity: 0}, {opacity: 1, scale: 1.3, ease: Bounce.easeOut}))
-        .add(TweenMax.fromTo('#example1-description', 0.7, {scale: 0}, {
-            scale: 1, 
+        .add(TweenMax.staggerFromTo('#lim-example-1 h4', 1, {opacity: 0, scale: 0}, {
             opacity: 1, 
+            scale: 1, 
             ease: Bounce.easeOut
-        }))
-        .staggerTo('#lim-example-1 h4', 1.5, {
-            scale: 0.7,
-            transformOrigin: 'top middle',
-            onComplete: function(){
-                if (!$('#distanceSVG').is(':visible')) {
-                    $('#distanceSVG').show('pulsate', 'slow');
-                }
+        }, 0.5, function(){
+            scaleTween.play(0);
+            if (!$('#distanceSVG').is(':visible')) {
+                $('#distanceSVG').delay(1000).show('fade', 'slow');
             }
-        }, 1)
-        .add('end', 2)
+        }))
+        .add('end', 3)
         .to('#distanceRect', 4, {
             width: 222, 
             left: '10vw', 
@@ -66,7 +68,7 @@ $(document).ready(function() {
         })
         .fromTo('#arrow-ex', 1, {opacity: 0}, {opacity: 1, scale: 1, ease: Linear.easeOut});
     
-    var scene1 = new ScrollMagic.Scene({triggerElement: '#lim-example-1', duration: '100%'})
+    var scene1 = new ScrollMagic.Scene({triggerElement: '#lim-example-1', duration: '400%'})
         .setTween(tween1)
         .setPin('#lim-example-1', {pushFollowers: true})
         .triggerHook('onLeave')
@@ -88,25 +90,44 @@ $(document).ready(function() {
     var fractionMultiplier = 1;
     var fractionDenominator = 2;
     var oldTermCovered = 0;
+
+    $('#nthTerm').on("change", function(){
+        var nthTermNumber = Number.parseInt($(this).val());
+        var tweenProgress = nthTermNumber*5/(nthTermNumber+1) + 1.45;
+        $('#sequenceRect').width(240*nthTermNumber/(nthTermNumber+1));
+        var nthTerm = `${nthTermNumber}/${++nthTermNumber}`;
+        $('#sequenceEquals').text(nthTerm);
+        $('#term').text(nthTerm);
+        $('#sequenceTerm').text(`1/${nthTermNumber}`);
+        tween2.resume(tweenProgress);
+    });
+
     function checkTerm() {
         var termCovered = this.progress().toFixed(3);
         if (termCovered >= 0.968) {
             return false;
         }
-        //it is going backwards
         if (oldTermCovered > termCovered) {
+            //check for 0/1 fraction and display nothing
+            if (fractionMultiplier == 1) {
+                term.textContent = "";
+                $('#sequenceTerm').text("");
+                $('#sequenceRect').width(0);
+                return;
+            }
+            //it is going backwards
             if (termCovered < fractionMultiplier/fractionDenominator) {
                 term.textContent = `${fractionMultiplier}/${fractionDenominator}`;
-                $('#sequenceTerm').text(`${fractionMultiplier}/${fractionDenominator}`);
+                $('#sequenceTerm').text(`${fractionDenominator - fractionMultiplier}/${fractionDenominator}`);
                 $('#sequenceRect').width(225*fractionMultiplier/fractionDenominator);
                 fractionMultiplier--;
                 fractionDenominator--;
             }
         } else {
-        //going forward
+            //going forward
             if (termCovered > fractionMultiplier/fractionDenominator) {
                 term.textContent = `${fractionMultiplier}/${fractionDenominator}`;
-                $('#sequenceTerm').text(`${fractionMultiplier}/${fractionDenominator}`);
+                $('#sequenceTerm').text(`${fractionDenominator - fractionMultiplier}/${fractionDenominator}`);
                 $('#sequenceRect').width(225*fractionMultiplier/fractionDenominator);
                 fractionMultiplier++;
                 fractionDenominator++;
@@ -120,7 +141,7 @@ $(document).ready(function() {
         .to('rect#example2-frame', 1, {strokeDashoffset: 0}, 0)
         .to('#example2', 0.5, {
                 scale: 0.7,
-                top: '-20vh',
+                transformOrigin: 'top middle',
                 onComplete: function(){
                     if (!$('#sequenceSVG').is(':visible')) {
                         $('#example2-params').show('pulsate');
@@ -150,8 +171,8 @@ $(document).ready(function() {
     //example3
     $('#example3-description').show();
     var tween3 = new TimelineMax()
-        .fromTo('#example3-description', 1, {opacity: 0}, {opacity: 1, ease: SlowMo.ease.config(0.7, 0.7, false)})
-        .staggerFromTo('.lim-stagger', 4, {scale: 3}, {scale: 1, ease: Power4.easeOut});
+        .fromTo('#example3', 1, {opacity: 0}, {opacity: 1, ease: SlowMo.ease.config(0.7, 0.7, false)});
+        // .staggerFromTo('.lim-stagger', 4, {scale: 3}, {scale: 1, ease: Power4.easeOut});
 
     //add offset
     var scene3 = new ScrollMagic.Scene({triggerElement: '#lim-example-3', duration: '200%'})

@@ -28,11 +28,17 @@
             <section id="lim-example-1" class="subject-section">
                 <div class="content middle-vertical-align">
                     <h4 id="example1">
-                        <span><strong>c</strong><sub>n</sub></span> = { <span>1</span>,
-                        <sup>1</sup>&frasl;<sub>2</sub>,
-                        <sup>1</sup>&frasl;<sub>4</sub>,
-                        <sup>1</sup>&frasl;<sub>8</sub>,
-                        <sup>1</sup>&frasl;<sub>16</sub>, …}
+                        <span><strong>c</strong><sub>n</sub></span> =
+                            <span>1</span> - <div class="fraction"><span class="numerator">1</span><span class="denominator">n</span></div>
+                    </h4>
+                    <h4>
+                        <label for="example1" class="caption">                        
+                            <span><strong>c</strong><sub>n</sub></span> = { <span>0</span>,
+                            <sup>1</sup>&frasl;<sub>2</sub>,
+                            <sup>2</sup>&frasl;<sub>3</sub>,
+                            <sup>3</sup>&frasl;<sub>4</sub>,
+                            <sup>4</sup>&frasl;<sub>5</sub>, …}
+                        </label>
                     </h4>
                     <h4 class="description" id="example1-description">
                         Any term of <span><strong>c</strong><sub>n</sub></span> has a difference <span>ε</span> from its
@@ -57,17 +63,17 @@
                             {{!-- left bound --}}
                             <line class="distance" x1="10" y1="30" x2="10" y2="50" stroke="#04756F" stroke-width="1" stroke-linecap="round"/>
                             {{!-- difference --}}
-                            <text fill="#F1451F" x="150" y="-30">an - L = <tspan dy="-25" dx="10">(ε)</tspan></text>
-                            <text fill="#04756F" x="210" y="-30" id="difference"></text>
+                            <text fill="#F1451F" x="150" y="-30">&#8739;an - L&#8739; = <tspan dy="-25" dx="10">(ε)</tspan></text>
+                            <text fill="#04756F" x="225" y="-30" id="difference"></text>
                             <line id="differenceLine" x1="10" y1="40" x2="235" y2="40" stroke="#D90000" stroke-width="1" stroke-linecap="round"/> 
                             {{!-- right bound --}}
                             <line x1="235" y1="30" x2="235" y2="50" stroke="#04756F" stroke-width="1" stroke-linecap="round"/>
                         </g>
                         <path id="arrow" stroke="#D90000" stroke-linecap="round" stroke-width="8" fill="none" stroke-linejoin="round" d="m250.88 207.51c557.4 25.04 195.77 378.57-1.4286 485.71v-46.429l5 48.571h35.714"/>
-                        {{!-- <line class="arrow" stroke="#D90000" stroke-width="1.5" id="arrow" x1="235" y1="40" /> --}}
                         <text fill="#2E0927" id="arrow-ex">Some distance between the
                             <tspan x="100" dy="15">the sequence and its limit</tspan>
-                            <tspan x="100" dy="15">will always be present!</tspan>
+                            <tspan x="100" dy="15">will always be present</tspan>
+                            <tspan x="100" dy="15">and we can make it as less as we please.</tspan>
                         </text>
                     </svg>
                 </div>
@@ -78,7 +84,7 @@
                     <h4 id="example2">
                         <strong>c</strong><sub>n</sub> = 
                             <div class="fraction">
-                                <span class="multiplier">n</span><span class="denominator">n + 1</span>
+                                <span class="numerator">n</span><span class="denominator">n + 1</span>
                             </div>
                         <svg>
                             <rect id="example2-frame" stroke="#FF8C00" stroke-width="3" fill="transparent"></rect>
@@ -93,11 +99,11 @@
                             <sup>4</sup>&frasl;<sub>5</sub>, …}
                         </label>
 
-                        <div class="params">
-                            
-                        </div>
-                        <div class="params">
-
+                        <div>
+                            <label for="nthTerm">n =</label>
+                            <input id="nthTerm" placeholder="n" type="number" min="1">
+                            <br>
+                            c<sub>n</sub> = <span id="sequenceEquals"></span>
                         </div>
                     </h4>
 
@@ -112,15 +118,15 @@
                             <text class="termDistance" x="-40" y="45" id="term"></text>
                         </g>
                         <g stroke="#2F343B">
-                            <line class="bound" x1="240" y1="0" x2="240" y2="80" stroke-width="3" stroke-linecap="round" />
+                            <line class="bound" x1="245" y1="0" x2="245" y2="80" stroke-width="3" stroke-linecap="round" />
                             <text x="240" y="100" stroke-width="1.5">1 (L)</text>
                         </g>
                         <g>
                             {{!-- left bound --}}
                             <line class="termDistance" x1="10" y1="30" x2="10" y2="50" stroke="#04756F" stroke-width="1" stroke-linecap="round"/>
                             {{!-- term --}}
-                            <text fill="#F1451F" x="150" y="-30">an - L =</text>
-                            <text fill="#04756F" x="210" y="-30" id="sequenceTerm"></text>
+                            <text fill="#F1451F" x="150" y="-30">&#8739;cn - L&#8739; =</text>
+                            <text fill="#04756F" x="225" y="-30" id="sequenceTerm"></text>
                             <line id="sequenceLine" x1="10" y1="40" x2="235" y2="40" stroke="#D90000" stroke-width="1" stroke-linecap="round"/> 
                             {{!-- right bound --}}
                             <line x1="235" y1="30" x2="235" y2="50" stroke="#04756F" stroke-width="1" stroke-linecap="round"/>
@@ -132,21 +138,53 @@
 
             <section id="lim-example-3" class="subject-section">
                 <div class="content middle-vertical-align">
-                    <h4 id="example3">
-                        <strong>c</strong><sub>n</sub> = {
-                        <sup>1</sup>&frasl;<sub>2</sub>,
-                        <sup>2</sup>&frasl;<sub>3</sub>,
-                        <sup>3</sup>&frasl;<sub>4</sub>,
-                        <sup>4</sup>&frasl;<sub>5</sub>, …}
-                    </h4>
-                    <h4 class="description" id="example3-description">
-                        <span class="lim-stagger">
-                            <div class="lim">lim</div>
-                            <div class="lim">n -> &#x221e;</div> 
+                    <h5 id="example3">
+                        Limits' Properties
+                        {{!-- <span class="lim-stagger">
+                            <div class="lim">
+                                <div class="top">lim</div>
+                                <div class="bottom">n->&#x221e;</div>
+                            </div>
                         </span>
                         <span class="lim-stagger"><strong>c</strong><sub>n</sub></span> 
                         <span class="lim-stagger">=</span> 
-                        <span class="lim-stagger"><strong>L</strong></span>
+                        <span class="lim-stagger"><strong>L</strong></span> --}}
+                    </h5>
+                    <h5 class="description" id="example3-description">
+                        Let <div class="lim">
+                                <div class="top">lim</div>
+                                <div class="bottom">n->&#x221e;</div>
+                            </div>  <strong>a</strong><sub>n</sub> = a
+
+                        <br>
+                        &amp;
+                        <br>
+                        <div class="lim">
+                                <div class="top">lim</div>
+                                <div class="bottom">n->&#x221e;</div>
+                        </div>  <strong>b</strong><sub>n</sub> = b
+                    </h5>
+                    <br>
+                    then
+                    <br>
+
+{{!-- stagger h4's --}}
+                    <h4>
+                        <div class="lim">
+                                <div class="top">lim</div>
+                                <div class="bottom">n->&#x221e;</div>
+                        </div>  (<strong>a</strong><sub>n</sub> + <strong>b</strong><sub>n</sub>) = a + b
+                    </h4>
+                    <h4>
+                        c * <div class="lim">
+                                <div class="top">lim</div>
+                                <div class="bottom">n->&#x221e;</div>
+                        </div> <strong>a</strong><sub>n</sub>
+                        =
+                        <div class="lim">
+                                <div class="top">lim</div>
+                                <div class="bottom">n->&#x221e;</div>
+                        </div> <strong>c</strong>*<strong>a</strong><sub>n</sub>
                     </h4>
                 </div>
             </section>

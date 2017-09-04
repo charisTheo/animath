@@ -19,7 +19,7 @@ body,
   width: 5px; }
 
 *::-webkit-scrollbar-track {
-  background-color: grey; }
+  background-color: #04756F; }
 
 *::-webkit-scrollbar-thumb {
   background: orangered; }
@@ -202,6 +202,18 @@ input.form-group-item {
   color: #2F343B;
   font-size: small; }
 
+h4.scaleToTop {
+  -webkit-transition: all 0.35s;
+  -moz-transition: all 0.35s;
+  -ms-transition: all 0.35s;
+  -o-transition: all 0.35s;
+  transition: all 0.35s;
+  transform: scale(0.7) top middle;
+  -webkit-transform: scale(0.7) top middle;
+  -moz-transform: scale(0.7) top middle;
+  -ms-transform: scale(0.7) top middle;
+  -o-transform: scale(0.7) top middle; }
+
 section#home {
   display: flex;
   flex-direction: row;
@@ -217,7 +229,7 @@ section#home {
     opacity: 0.7;
     color: #FF8C00;
     text-decoration: none;
-    background-color: #7a6b53; }
+    background-color: #1526d7; }
     section#home a.subject:hover, section#home a.subject:focus {
       text-decoration: none;
       opacity: 1;
@@ -267,8 +279,11 @@ section.subject-section {
     color: #2E0927; }
     section.subject-section .content .description {
       word-spacing: 5px;
-      line-height: 36px;
-      font-size: 1.5em; }
+      line-height: 46px;
+      font-size: 1.7em; }
+      section.subject-section .content .description#intro-description {
+        max-width: 50vw;
+        margin: 20px auto; }
       section.subject-section .content .description span {
         font-weight: bolder;
         display: inline-block; }
@@ -337,15 +352,16 @@ section.subject-section {
     color: #04756F; }
   section.subject-section[id^="lim-"] hr {
     border: 1px solid #04756F; }
-  section.subject-section#lim-example-1 sup, section.subject-section#lim-example-1 sub {
-    color: #04756F;
-    font-weight: bolder; }
-  section.subject-section#lim-example-1 .content > svg {
-    width: 100%;
-    left: 0;
-    top: 0;
-    margin-top: 50px;
-    overflow: visible; }
+  section.subject-section#lim-example-1 {
+    text-align: center; }
+    section.subject-section#lim-example-1 #example1 {
+      font-size: 1.5em; }
+    section.subject-section#lim-example-1 sup, section.subject-section#lim-example-1 sub {
+      color: #04756F;
+      font-weight: bolder; }
+    section.subject-section#lim-example-1 .content > svg {
+      margin: 100px auto;
+      overflow: visible; }
   section.subject-section#lim-example-2 {
     padding: 0; }
     section.subject-section#lim-example-2 #example2 {
@@ -357,19 +373,29 @@ section.subject-section {
         display: inline-block; }
       section.subject-section#lim-example-2 #example2 > svg {
         position: absolute;
+        overflow: visible;
         left: 0;
         top: 0; }
+    section.subject-section#lim-example-2 #example2-params {
+      margin-top: 0; }
+      section.subject-section#lim-example-2 #example2-params div {
+        margin-top: 40px; }
+      section.subject-section#lim-example-2 #example2-params input#nthTerm {
+        background-color: transparent;
+        outline: none;
+        border: none;
+        position: absolute;
+        color: #04756F; }
+        section.subject-section#lim-example-2 #example2-params input#nthTerm:active, section.subject-section#lim-example-2 #example2-params input#nthTerm:focus {
+          background-color: transparent;
+          outline: none;
+          border: none; }
     section.subject-section#lim-example-2 svg#sequenceSVG {
-      width: 100%;
-      left: 0;
-      top: 0;
-      margin-top: 50px;
+      margin: 50px auto;
       overflow: visible; }
   section.subject-section#lim-example-3 #example3 {
     transform: scaleY(3);
     opacity: 0; }
-  section.subject-section#lim-example-3 #example3-description div.lim {
-    display: block; }
   section.subject-section#lim-example-3 #example3-description span.lim-stagger {
     vertical-align: middle; }
 
@@ -428,8 +454,20 @@ span.superscript {
 div.fraction {
   display: inline-block;
   vertical-align: middle; }
-  div.fraction .denominator, div.fraction .multiplier {
+  div.fraction .denominator, div.fraction .numerator {
     display: block;
     padding: 5px; }
-  div.fraction .multiplier {
+  div.fraction .numerator {
     border-bottom: 1px solid; }
+
+div.lim {
+  display: inline-block;
+  vertical-align: middle;
+  color: #04756F; }
+  div.lim .top {
+    display: block;
+    margin-bottom: -5px; }
+  div.lim .bottom {
+    display: block;
+    font-size: medium;
+    margin-top: -5px; }

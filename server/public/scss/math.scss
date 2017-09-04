@@ -17,8 +17,23 @@ div.fraction {
         display: block;
         padding: 5px;
     }
-    .multiplier {
+    .numerator {
         @extend .denominator;
         border-bottom: 1px solid;    
+    }
+}
+
+div.lim {
+    display: inline-block;
+    vertical-align: middle;
+    color: $blue;
+    .top {
+        display: block;
+        margin-bottom: -5px;
+    }
+    .bottom {
+        display: block;
+        font-size: medium;
+        margin-top: -5px;
     }
 }
