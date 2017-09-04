@@ -229,7 +229,7 @@ section#home {
     opacity: 0.7;
     color: #FF8C00;
     text-decoration: none;
-    background-color: #1526d7; }
+    background-color: #0f9c87; }
     section#home a.subject:hover, section#home a.subject:focus {
       text-decoration: none;
       opacity: 1;
@@ -394,10 +394,18 @@ section.subject-section {
       margin: 50px auto;
       overflow: visible; }
   section.subject-section#lim-example-3 #example3 {
-    transform: scaleY(3);
-    opacity: 0; }
-  section.subject-section#lim-example-3 #example3-description span.lim-stagger {
-    vertical-align: middle; }
+    color: #04756F; }
+  section.subject-section#lim-example-3 div.lim-stagger:nth-child(odd) {
+    margin: 20px;
+    color: #F1451F; }
+  section.subject-section#lim-example-3 .property.then {
+    text-align: left;
+    margin-top: 0; }
+  section.subject-section#lim-example-3 .property-number {
+    margin-right: 20px;
+    color: #F1451F; }
+  section.subject-section#lim-example-3 h4.property {
+    margin: 40px auto; }
 
 #scrollReminder {
   position: absolute;
@@ -462,8 +470,7 @@ div.fraction {
 
 div.lim {
   display: inline-block;
-  vertical-align: middle;
-  color: #04756F; }
+  vertical-align: middle; }
   div.lim .top {
     display: block;
     margin-bottom: -5px; }

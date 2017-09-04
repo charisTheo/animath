@@ -229,13 +229,22 @@ section.subject-section {
 
     &#lim-example-3 {
         #example3 {
-            transform: scaleY(3);
-            opacity: 0;
+            color: $blue;
         }
-        #example3-description {
-            span.lim-stagger {
-                vertical-align: middle;
-            }
+        div.lim-stagger:nth-child(odd) {
+            margin: 20px;
+            color: $orange;
+        }
+        .property.then {
+            text-align: left;
+            margin-top: 0;
+        }
+        .property-number {
+            margin-right: 20px;
+            color: $orange;
+        }
+        h4.property {
+            margin: 40px auto;
         }
     }
 }
