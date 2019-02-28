@@ -5,22 +5,13 @@ section#home {
     flex-wrap: wrap;
     justify-content: center;
     a.subject {
-        flex-basis: auto;
-        flex-flow: row wrap;
-        margin: 5px;
-        display: table;
-        min-width: 100px;
-        min-height: 100px;
-        opacity: 0.7;
-        color: $yellow;
+        margin: 15px;
+        color: $purple;
         text-decoration: none;
-        background-color: rgb(random(256)-1,random(256)-1,random(256)-1);
+        background-color: $white;
         &:hover,
         &:focus {
             text-decoration: none;
-            opacity: 1;
-            padding: 20px;
-            max-width: 70px;
             .subject-title {
                 font-size: 20px;
             }

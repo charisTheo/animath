@@ -4,10 +4,13 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "taskName": "default",
-            "type": "shell",
-            "command": "cd server && gulp",
-            "group": "build"
+            "label": "sass",
+            "command": "gulp",
+            "args": ["sass"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
         }
     ]
 }
