@@ -1,11 +1,10 @@
-@mixin box-shadow($r1, $r2, $blur, $color) {
+@mixin box-shadow($r1, $r2, $blur, $spread, $color) {
   box-shadow: $r1 $r2 $blur $color;
   -o-box-shadow: $r1 $r2 $blur $color;
   -ms-box-shadow: $r1 $r2 $blur $color;
   -moz-box-shadow: $r1 $r2 $blur $color;
   -webkit-box-shadow: $r1 $r2 $blur $color;
 }
-
 @mixin transition-all() {
   -webkit-transition: all 0.35s;
   -moz-transition: all 0.35s;
