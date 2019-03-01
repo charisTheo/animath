@@ -1,11 +1,5 @@
 html, body {
-  height: 100%;
-  width: 100%; }
-
-html,
-body,
-* {
-  box-sizing: border-box; }
+  margin: 0; }
 
 *,
 *::after,
@@ -229,7 +223,8 @@ section#home {
     padding: 2rem;
     color: #2E0927;
     text-decoration: none;
-    background-color: #D90000; }
+    background-color: #fff;
+    border-radius: 6px; }
     section#home a.subject:hover, section#home a.subject:focus {
       text-decoration: none; }
       section#home a.subject:hover .subject-title, section#home a.subject:focus .subject-title {
@@ -314,8 +309,7 @@ section.subject-section {
         margin: 25px 0; }
         section.subject-section#seq-example-5 .content #example5-pin .convergent-heading:not(:first-child),
         section.subject-section#seq-example-5 .content #example5-pin .divergent-heading:not(:first-child) {
-          color: #F1451F;
-          font-size: small; }
+          color: #2F343B; }
       section.subject-section#seq-example-5 .content #example5-pin #divergent,
       section.subject-section#seq-example-5 .content #example5-pin #convergent {
         width: 50%;

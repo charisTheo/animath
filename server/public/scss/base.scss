@@ -1,12 +1,6 @@
 html, body {
-    height: 100%;
-    width: 100%;
-    @extend .font;    
-}
-html, 
-body,
-* {
-    box-sizing: border-box;
+    @extend .font; 
+    margin: 0;   
 }
 *,
 *::after,

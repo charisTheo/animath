@@ -2,6 +2,8 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var browserSync = require('browser-sync');
 var nodemon = require('gulp-nodemon');
+let minifyCSS = require('gulp-minify-css');
+let rename = require('gulp-rename');
 
 gulp.task('nodemon', function(cb){
     var started = false;
@@ -18,11 +20,6 @@ gulp.task('nodemon', function(cb){
 })
 
 gulp.task('browserSync', gulp.series(['nodemon'], function(clean) {
-        // browserSync({
-        //     proxy: 'localhost:3000/',
-        //     port: 5000,
-        //     files: ["server/public/css/*.css", "server/public/views/*.hbs", "server/public/views/partials/*.hbs",  "server/public/js/*.js"]
-        // });
         browserSync.init({
             server: {
               baseDir: 'server/public',
@@ -38,12 +35,20 @@ gulp.task('browserSync', gulp.series(['nodemon'], function(clean) {
     })
 );
 
+gulp.task('minify-css', gulp.series(function(clean) {
+    gulp.src('server/public/css/styles.css')
+        .pipe(minifyCSS())
+        .pipe(rename({suffix: '.min'}))
+        .pipe(gulp.dest('server/public/css'));
+    return clean();
+}));
+
 gulp.task('sass', gulp.series(function(clean){
     gulp.src('server/public/scss/styles.scss')
         .pipe(sass())
         .pipe(gulp.dest('server/public/css'));
     return clean();
-}));
+}, 'minify-css'));
 
 gulp.task('watch', gulp.series(function(clean){
     gulp.watch('server/public/scss/*.scss', gulp.series(['sass', browserSync.reload]));

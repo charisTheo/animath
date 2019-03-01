@@ -10,7 +10,8 @@ section#home {
         padding: 2rem;
         color: $purple;
         text-decoration: none;
-        background-color: $red;
+        background-color: #fff;
+        border-radius: 6px;
         &:hover,
         &:focus {
             text-decoration: none;
@@ -117,8 +118,7 @@ section.subject-section {
                     display: block;
                     margin: 25px 0;
                     &:not(:first-child) {
-                        color: $orange;
-                        font-size: small;
+                        color: $grey;
                     }
                 }
                 #divergent,
