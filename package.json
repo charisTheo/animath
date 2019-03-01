@@ -1,11 +1,11 @@
 {
-  "name": "maths",
+  "name": "animath",
   "version": "1.0.0",
   "description": "Interactive Maths Tutorial",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "cd server && node server.js"
+    "start": "cd server && nodemon server.js --watch server/public/css/*.css --watch server/public/js/**/*.js"
   },
   "repository": {
     "type": "git",
@@ -15,7 +15,8 @@
     "maths",
     "interactive",
     "tutorial",
-    "animations"
+    "animations",
+    "scrolling animations"
   ],
   "author": "charisTheo",
   "license": "ISC",
@@ -24,15 +25,14 @@
   },
   "homepage": "https://github.com/charisTheo/maths#readme",
   "dependencies": {
-    "browser-sync": "^2.26.3",
     "express": "^4.16.4",
-    "gulp": "^3.9.1",
-    "gulp-nodemon": "^2.4.2",
-    "gulp-sass": "^3.1.0",
-    "hbs": "^4.0.2",
-    "node": "^8.2.1"
+    "hbs": "^4.0.2"
   },
   "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "gulp": "^4.0.0",
+    "gulp-nodemon": "^2.4.2",
+    "gulp-sass": "^4.0.2",
     "nodemon": "^1.18.10"
   }
 }
